@@ -591,8 +591,11 @@ textarea {
   /* line 130, sass/_screen.scss */
   .field {
     margin-bottom: 1.33333em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 
   /* line 136, sass/_screen.scss */
@@ -654,8 +657,12 @@ textarea {
     border-top-width: 0.05556em;
     border-top-style: solid;
     padding-top: 0.61111em;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 
   /* line 189, sass/_screen.scss */
@@ -702,16 +709,22 @@ textarea {
   /* line 225, sass/_screen.scss */
   #skipnav:focus {
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 
   /* line 231, sass/_screen.scss */
   header nav .navigation {
     list-style-type: none;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     border-color: #dedede;
     border-top-width: 0.05556em;
     border-top-style: solid;
@@ -788,6 +801,8 @@ textarea {
 
   /* line 297, sass/_screen.scss */
   #search-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     padding: 0.33333em 0.66667em 0.66667em;
     box-shadow: 0 0 0 1px #dedede inset;
@@ -959,9 +974,14 @@ textarea {
   /* line 448, sass/_screen.scss */
   .browse .records,
   #collection-items {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     clear: both;
   }
 
@@ -1093,10 +1113,15 @@ textarea {
 
   /* line 560, sass/_screen.scss */
   .element {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin-bottom: 1.33333em;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 
   /* line 567, sass/_screen.scss */
@@ -1143,7 +1168,8 @@ textarea {
     width: 100%;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 
   /* line 609, sass/_screen.scss */
@@ -1185,7 +1211,8 @@ textarea {
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
     list-style: none;
     padding: 0;
   }
