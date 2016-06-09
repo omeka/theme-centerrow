@@ -20,10 +20,10 @@ queue_js_string('
 
 <!-- Featured Item -->
 <div id="featured">
-    <?php if (get_theme_option('Display Featured Item') !== '0'): ?>
+    <?php if (get_theme_option('Display Featured Item') !== '0' && count(get_random_featured_items()) > 0): ?>
     <?php echo random_featured_items(3); ?>
     <?php endif; ?>
-    <?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
+    <?php if (get_theme_option('Display Featured Collection') !== '0' && count(get_random_featured_collection()) > 0): ?>
     <?php echo random_featured_collection(3); ?>
     <?php endif; ?>
     <?php if ((get_theme_option('Display Featured Exhibit') !== '0')
