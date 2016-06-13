@@ -49,7 +49,7 @@
                 <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
                 <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
                 <?php else: ?>
-                <?php echo search_form(); ?>
+                <?php echo search_form(array('form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
                 <?php endif; ?>
                 <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
             </div>

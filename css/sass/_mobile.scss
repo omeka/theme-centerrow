@@ -61,6 +61,10 @@ footer {
     margin: rhythm(.5) 0;
 }
 
+header nav .navigation {
+    justify-content: center;
+}
+
 /* @end */
 
 /* @group ----- Browse ----- */
@@ -97,6 +101,19 @@ footer {
 .element .element-text {
     width: 100%;
     text-align: left;
+}
+
+/* @end */
+
+/* @group ----- Search ----- */
+
+#search-filters ul li {
+    font-size: .875 * $base-font-size;
+    margin: 0 rhythm(.125, .875 * $base-font-size) rhythm(.5, .875 * $base-font-size);
+}
+
+#search-results {
+    margin-top: rhythm(.5);
 }
 
 /* @end */

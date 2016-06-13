@@ -1035,7 +1035,7 @@ textarea {
     list-style: none;
     padding: 0;
     text-align: center;
-    margin-bottom: 0;
+    margin: 0;
   }
   /* line 499, sass/_screen.scss */
   #search-filters ul li,
@@ -1244,7 +1244,7 @@ textarea {
   /* line 669, sass/_screen.scss */
   #search-results {
     width: 100%;
-    margin: 0;
+    margin: 1.33333em 0 0;
   }
 
   /* line 674, sass/_screen.scss */
@@ -1410,14 +1410,21 @@ textarea {
     margin: 0.66667em 0;
   }
 
+  /* line 64, sass/_mobile.scss */
+  header nav .navigation {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
   /* @end */
   /* @group ----- Browse ----- */
-  /* line 68, sass/_mobile.scss */
+  /* line 72, sass/_mobile.scss */
   .browse .records {
     padding: 1.33333em 0;
   }
 
-  /* line 72, sass/_mobile.scss */
+  /* line 76, sass/_mobile.scss */
   .browse .hentry,
   #collection-items .hentry {
     width: 100%;
@@ -1428,7 +1435,7 @@ textarea {
     margin-bottom: 1.33333em;
   }
 
-  /* line 80, sass/_mobile.scss */
+  /* line 84, sass/_mobile.scss */
   .browse .hentry img,
   #collection-items .hentry img {
     max-width: 50%;
@@ -1436,7 +1443,7 @@ textarea {
     margin: 0 1.33333em 0.33333em 0;
   }
 
-  /* line 87, sass/_mobile.scss */
+  /* line 91, sass/_mobile.scss */
   .browse .hentry h2,
   #collection-items .hentry h2 {
     margin-top: 0;
@@ -1444,7 +1451,7 @@ textarea {
 
   /* @end */
   /* @group ----- Show ----- */
-  /* line 96, sass/_mobile.scss */
+  /* line 100, sass/_mobile.scss */
   .element h3,
   .element .element-text {
     width: 100%;
@@ -1452,8 +1459,21 @@ textarea {
   }
 
   /* @end */
+  /* @group ----- Search ----- */
+  /* line 110, sass/_mobile.scss */
+  #search-filters ul li {
+    font-size: 15.75px;
+    margin: 0 0.19048em 0.7619em;
+  }
+
+  /* line 115, sass/_mobile.scss */
+  #search-results {
+    margin-top: 0.66667em;
+  }
+
+  /* @end */
   /* @group ----- Exhibits ----- */
-  /* line 106, sass/_mobile.scss */
+  /* line 123, sass/_mobile.scss */
   .exhibits #primary,
   #exhibit-pages,
   #exhibit-blocks,
@@ -1463,7 +1483,7 @@ textarea {
     overflow: hidden;
   }
 
-  /* line 115, sass/_mobile.scss */
+  /* line 132, sass/_mobile.scss */
   #exhibit-pages {
     margin: 2.66667em 0;
     text-align: center;
