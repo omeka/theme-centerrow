@@ -24,7 +24,7 @@ footer {
 
 /* @end */
 
-/* group ----- Navigation ----- */
+/* @group ----- Navigation ----- */
 
 .pagination-nav,
 #sort-links {
@@ -114,6 +114,28 @@ header nav .navigation {
 
 #search-results {
     margin-top: rhythm(.5);
+}
+
+.search-entry:first-child select {
+    width: 50%;
+}
+
+.search-entry select {
+    width: calc(50% - 2.25em);
+    margin-bottom: rhythm(.25);
+}
+
+.search-entry .advanced-search-joiner {
+    width: 4em;
+}
+
+.search-entry input[type="text"] {
+    width: 100%;
+    margin-bottom: rhythm(.25);
+}
+
+.field .inputs ~ .add_search {
+    margin-left: 0;
 }
 
 /* @end */

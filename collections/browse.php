@@ -18,7 +18,7 @@ $sortLinks[__('Date Added')] = 'added';
 <?php foreach (loop('collections') as $collection): ?>
     <div class="collection hentry">
 
-        <?php if ($collectionImage = record_image('collection', 'square_thumbnail')): ?>
+        <?php if ($collectionImage = record_image('collection')): ?>
             <?php echo link_to_collection($collectionImage, array('class' => 'image')); ?>
         <?php endif; ?>
 

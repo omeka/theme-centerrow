@@ -170,6 +170,10 @@ input[type="submit"] {
     margin-top: rhythm(.5);
 }
 
+.search-entry:first-child .advanced-search-joiner {
+    display: none;
+}
+
 /* @end */
 
 /* @group ----- Navigation ----- */
