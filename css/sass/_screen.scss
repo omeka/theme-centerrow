@@ -274,8 +274,10 @@ header a {
 }
 
 #header-image img {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
     vertical-align: top;
+    margin-bottom: rhythm();
 }
 
 #search-container {
@@ -533,6 +535,14 @@ footer {
     background-color: $gray;
 }
 
+#itemfiles .chocolat-close {
+    display: none;
+}
+
+#itemfiles.chocolat-in-fullscreen .chocolat-close {
+    display: block;
+}
+
 #itemfiles .item-file {
     text-align: center;
 }
@@ -591,6 +601,10 @@ footer {
 /* @end */
 
 /* @group ----- Home ----- */
+
+#home #header-image {
+    display: none;
+}
 
 #home #featured {
     margin: 0 0 rhythm(2);

@@ -24,6 +24,7 @@
     queue_css_file(array('style', 'iconfonts'));
     queue_css_url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic');
     echo head_css();
+    echo $this->partial('common/custom_colors.php');
     ?>
 
     <!-- JavaScripts -->

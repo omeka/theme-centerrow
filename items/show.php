@@ -1,18 +1,7 @@
 <?php
 queue_css_file('chocolat');
 queue_js_file('jquery.chocolat.min', 'js');
-queue_js_string('
-    jQuery(document).ready(function(){
-        var inContainer = jQuery("#itemfiles-nav").Chocolat({
-        imageSize: "default",
-        loop: true,
-        fullscreen: true,
-        container: "#itemfiles"
-        }).data("chocolat");
-
-        inContainer.api().open()
-    });
-');
+queue_js_file('items-show', 'js');
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 $itemFiles = $item->Files;
 ?>
