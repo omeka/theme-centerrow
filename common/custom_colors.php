@@ -1,6 +1,7 @@
 <?php
     ($bodyBgColor = get_theme_option('body_bg_color')) || ($buttonBgColor = "#FFFFFF");
     ($borderColor = get_theme_option('border_color')) || ($buttonBgColor = "#DEDEDE");
+    ($linkColor = get_theme_option('link_color')) || ($linkColor = "#C72E2E");
 ?>
 
 <style>
@@ -31,5 +32,13 @@ select,
 .item-pagination.navigation,
 .secondary-nav ul {
     border-color: <?php echo $borderColor; ?>
+}
+
+a,
+.secondary-nav.navigation li.active a,
+.pagination-nav .sorting a,
+#sort-links .sorting a,
+#exhibit-pages .current a {
+    color: <?php echo $linkColor; ?>;
 }
 </style>
