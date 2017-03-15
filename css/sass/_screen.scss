@@ -628,17 +628,30 @@ footer {
 
 #featured .featured-meta {
     position: absolute;
-    bottom: rhythm();
-    left: 0;
-    right: 0;
-    padding: rhythm(.5) gutter() rhythm(.75);
-    background-color: rgba(0,0,0,.8);
+    top: 50%;
+    left: 20%;
+    right: 20%;
+    transform: translateY(-50%);
+    border: 1px solid #fff;
+    padding: rhythm();
     color: #fff;
+    text-align: center;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: rhythm(-1);
+        bottom: rhythm(-1);
+        right: rhythm(-1);
+        left: rhythm(-1);
+        background-color: rgba(0,0,0,.8);
+        z-index: -1;
+    }
 }
 
 #featured .featured-meta h3 {
     font-size: 1.75 * $base-font-size;
-    line-height: 1.75 * $base-line-height;
+    line-height: 1.5 * $base-line-height;
     margin: 0;
     font-weight: normal;
 }
