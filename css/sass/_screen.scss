@@ -470,13 +470,15 @@ footer {
     width: 100%;
 }
 
-.browse .hentry h2 {
+.browse .hentry h2,
+#collection-items .hentry h2 {
     font-size: $base-font-size;
     line-height: $base-line-height;
     margin-bottom: 0;
 }
 
-.browse .hentry h2 a {
+.browse .hentry h2 a,
+#collection-items .hentry h2 a {
     color: #000;
 }
 
