@@ -284,6 +284,7 @@ header a {
     position: absolute;
     top: rhythm(-2);
     right: gutter();
+    z-index: 100;
 }
 
 #search-container input[type="text"],
@@ -338,7 +339,7 @@ header a {
 }
 
 #search-form.open + .search-toggle {
-    top: rhythm(.25);
+    top: 0;
     right: 0;
 
     &:after {
@@ -731,6 +732,8 @@ footer {
     margin-top: rhythm(2);
 }
 
+.exhibits.show h1,
+.exhibits.summary h1,
 .exhibits #primary,
 #exhibit-blocks,
 #exhibit-page-navigation {
@@ -741,7 +744,7 @@ footer {
 
 #exhibit-pages {
     padding: 0 gutter() rhythm() 0;
-    width: span(2 of 16);
+    width: span(2.5 of 16);
 }
 
 #exhibit-pages > ul {

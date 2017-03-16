@@ -1,3 +1,11 @@
+#site-title {
+    text-align: center;
+}
+
+.featured-meta h3 + p {
+    display: none;
+}
+
 /* @group ----- Containers ----- */
 
 #wrap,
@@ -44,8 +52,15 @@ footer {
 
 /* @group ----- Header ----- */
 
+header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #site-title {
     margin: rhythm(.25) 0;
+    order: 2;
+    width: 100%;
 }
 
 #site-title img {
@@ -54,7 +69,52 @@ footer {
 }
 
 #search-container {
-    top: rhythm(-.475);
+    top: 0;
+
+    &:not(.with-advanced) {
+        order: 1;
+        position: relative;
+        width: 100%;
+    }
+}
+
+#search-container.with-advanced #search-form.closed {
+    padding: 0;
+}
+
+#search-container:not(.with-advanced) #search-form {
+    margin-bottom: rhythm(.5);
+
+    &.open {
+        position: relative;
+    }
+}
+
+#search-container:not(.with-advanced) #search-form.closed {
+    width: auto;
+    height: auto;
+}
+
+#search-container:not(.with-advanced) #search-form + .search-toggle {
+    display: none;
+}
+
+#search-container:not(.with-advanced) [type="text"],
+#search-container:not(.with-advanced) [type="submit"],
+#search-container:not(.with-advanced) #advanced-form {
+    display: block;
+}
+
+#search-form.closed [type="text"] {
+    width: 100%;
+}
+
+#top-nav {
+    order: 3;
+}
+
+#header-image {
+    order: 4;
 }
 
 #top-nav ul {
@@ -142,6 +202,8 @@ header nav .navigation {
 
 /* @group ----- Exhibits ----- */
 
+.exhibits.show h1,
+.exhibits.summary h1,
 .exhibits #primary,
 #exhibit-pages,
 #exhibit-blocks,
@@ -153,7 +215,6 @@ header nav .navigation {
 
 #exhibit-pages {
     margin: rhythm(2) 0;
-    text-align: center;
 }
 
 /* @end */
