@@ -2,9 +2,9 @@
 <html lang="<?php echo get_html_lang(); ?>">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
     <?php if ( $description = option('description')): ?>
     <meta name="description" content="<?php echo $description; ?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
     <?php endif; ?>
     <?php
     if (isset($title)) {

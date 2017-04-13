@@ -1198,6 +1198,11 @@ textarea {
   }
 
   /* line 630, sass/_screen.scss */
+  #featured .slick-slide {
+    min-height: 50vh;
+  }
+
+  /* line 634, sass/_screen.scss */
   #featured .featured-meta {
     position: absolute;
     top: 50%;
@@ -1210,7 +1215,7 @@ textarea {
     color: #fff;
     text-align: center;
   }
-  /* line 641, sass/_screen.scss */
+  /* line 645, sass/_screen.scss */
   #featured .featured-meta:after {
     content: "";
     position: absolute;
@@ -1222,7 +1227,7 @@ textarea {
     z-index: -1;
   }
 
-  /* line 653, sass/_screen.scss */
+  /* line 657, sass/_screen.scss */
   #featured .featured-meta h3 {
     font-size: 31.5px;
     line-height: 36px;
@@ -1230,22 +1235,22 @@ textarea {
     font-weight: normal;
   }
 
-  /* line 660, sass/_screen.scss */
+  /* line 664, sass/_screen.scss */
   #featured .featured-meta h3 a {
     color: #fff;
   }
-  /* line 663, sass/_screen.scss */
+  /* line 667, sass/_screen.scss */
   #featured .featured-meta h3 a:hover {
     text-decoration: none;
   }
 
-  /* line 668, sass/_screen.scss */
+  /* line 672, sass/_screen.scss */
   #featured .featured-meta p {
     font-size: 15.75px;
     margin: 0;
   }
 
-  /* line 673, sass/_screen.scss */
+  /* line 677, sass/_screen.scss */
   #featured .slick-dots {
     position: absolute;
     top: 100%;
@@ -1256,12 +1261,12 @@ textarea {
     padding: 0;
   }
 
-  /* line 681, sass/_screen.scss */
+  /* line 685, sass/_screen.scss */
   #featured .slick-dots li {
     display: inline-block;
   }
 
-  /* line 685, sass/_screen.scss */
+  /* line 689, sass/_screen.scss */
   #featured .slick-dots button {
     background-color: #dedede;
     width: 13.5px;
@@ -1273,43 +1278,43 @@ textarea {
     margin: 0 .5em;
   }
 
-  /* line 696, sass/_screen.scss */
+  /* line 700, sass/_screen.scss */
   #featured .slick-dots li[aria-hidden="false"] button {
     background-color: #9e9e9e;
   }
 
   /* @end */
   /* @group ----- Search ----- */
-  /* line 703, sass/_screen.scss */
+  /* line 707, sass/_screen.scss */
   #search-results {
     width: 100%;
     margin: 1.33333em 0 0;
   }
 
-  /* line 708, sass/_screen.scss */
+  /* line 712, sass/_screen.scss */
   #search-results img {
     height: 4em;
     float: right;
   }
 
-  /* line 713, sass/_screen.scss */
+  /* line 717, sass/_screen.scss */
   #search-results a {
     vertical-align: top;
   }
 
   /* @end */
   /* @group ----- Exhibits ----- */
-  /* line 721, sass/_screen.scss */
+  /* line 725, sass/_screen.scss */
   .exhibit-block {
     overflow: hidden;
   }
 
-  /* line 725, sass/_screen.scss */
+  /* line 729, sass/_screen.scss */
   .exhibit-items + * {
     margin-top: 0;
   }
 
-  /* line 729, sass/_screen.scss */
+  /* line 733, sass/_screen.scss */
   #exhibit-page-navigation {
     border-color: #dedede;
     border-top-width: 0.05556em;
@@ -1318,7 +1323,7 @@ textarea {
     margin-top: 2.66667em;
   }
 
-  /* line 735, sass/_screen.scss */
+  /* line 739, sass/_screen.scss */
   .exhibits.show h1,
   .exhibits.summary h1,
   .exhibits #primary,
@@ -1329,29 +1334,29 @@ textarea {
     padding-left: 0.625%;
   }
 
-  /* line 745, sass/_screen.scss */
+  /* line 749, sass/_screen.scss */
   #exhibit-pages {
     padding: 0 0.625% 1.33333em 0;
     width: 15.625%;
   }
 
-  /* line 750, sass/_screen.scss */
+  /* line 754, sass/_screen.scss */
   #exhibit-pages > ul {
     margin: 0;
   }
 
-  /* line 754, sass/_screen.scss */
+  /* line 758, sass/_screen.scss */
   #exhibit-pages a {
     font-size: 15.75px;
     color: #676767;
   }
 
-  /* line 759, sass/_screen.scss */
+  /* line 763, sass/_screen.scss */
   #exhibit-pages .current a {
     color: #C72E2E;
   }
 
-  /* line 763, sass/_screen.scss */
+  /* line 767, sass/_screen.scss */
   #exhibit-pages > ul > li:not(:last-of-type) {
     border-color: #dedede;
     border-bottom-width: 0.05556em;
@@ -1360,7 +1365,7 @@ textarea {
     margin-bottom: 0.33333em;
   }
 
-  /* line 769, sass/_screen.scss */
+  /* line 773, sass/_screen.scss */
   #exhibit-pages h4 {
     border-color: #dedede;
     border-bottom-width: 0.16667em;
@@ -1369,14 +1374,14 @@ textarea {
     margin: 0 0 0.33333em;
   }
 
-  /* line 775, sass/_screen.scss */
+  /* line 779, sass/_screen.scss */
   .summary #primary > div > *:first-child,
   #exhibit-blocks > .exhibit-block > *:first-child {
     margin-top: 0;
     padding-top: 0;
   }
 
-  /* line 781, sass/_screen.scss */
+  /* line 785, sass/_screen.scss */
   .exhibit-block > *:last-child {
     margin-bottom: 0;
   }

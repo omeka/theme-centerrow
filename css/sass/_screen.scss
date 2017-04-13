@@ -627,6 +627,10 @@ footer {
     transform: translateY(-50%);
 }
 
+#featured .slick-slide {
+    min-height: 50vh;
+}
+
 #featured .featured-meta {
     position: absolute;
     top: 50%;
