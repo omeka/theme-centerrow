@@ -108,9 +108,9 @@ fieldset {
 }
 
 select {
-    appearance: normal;
-    -webkit-appearance: normal;
-    -moz-appearance: normal;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     background-color: #fff;
     border: 1px solid $gray;
     border-radius: 2px;
@@ -120,11 +120,16 @@ select {
 }
 
 button,
+html [type="button"],
 .button,
 input[type="submit"] {
     background-color: $gray;
     border: 0;
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
 }
 
 .field {
@@ -675,11 +680,13 @@ footer {
 }
 
 #featured .slick-dots {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
     @include de-list;
+    margin: 0;
+    padding: rhythm() 0;
+    
 }
 
 #featured .slick-dots li {
