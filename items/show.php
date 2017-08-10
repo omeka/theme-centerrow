@@ -23,7 +23,7 @@ $hasImages = (count($images) > 0);
 <?php if ($hasImages): ?>
 <div id="itemfiles" style="width: 100%; height: 50vh; background: #E0E0E0; margin:auto;"></div>
 <div id="itemfiles-nav">
-    <?php foreach ($itemFiles as $itemFile): ?>
+    <?php foreach ($images as $itemFile): ?>
         <a href="<?php echo $itemFile->getWebPath('original'); ?>" class="chocolat-image">
             <?php echo file_image('square_thumbnail', array(), $itemFile); ?>
         </a>
