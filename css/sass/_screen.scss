@@ -254,6 +254,10 @@ header nav li {
     margin: 0 .5em;
 }
 
+header nav li ul {
+    display: none;
+}
+
 header nav a {
     font-size: .875 * $base-font-size;
 }
