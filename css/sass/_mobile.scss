@@ -10,7 +10,7 @@
 
 #wrap,
 footer {
-    padding: 0 rhythm();
+    padding: 0 $base-line-height;
 }
 
 /* @end */
@@ -22,7 +22,7 @@ footer {
 .field .two.columns {
     width: 100%;
     text-align: left;
-    margin-bottom: rhythm(.25);
+    margin-bottom: (.25 * $base-line-height);
 }
 
 .field .inputs,
@@ -38,9 +38,9 @@ footer {
 #sort-links {
     width: 100%;
     text-align: center;
-    padding-top: rhythm(.25);
-    border-color: $gray;
-    @include trailing-border(1px, .25, $base-font-size, solid);
+    padding-top: (.25 * $base-line-height);
+    border-bottom: 1px solid $gray;
+    padding-bottom: ((.25 * $base-line-height) - 1px);
 }
 
 .pagination-nav ul,
@@ -58,14 +58,14 @@ header {
 }
 
 #site-title {
-    margin: rhythm(.25) 0;
+    margin: (.25 * $base-line-height) 0;
     order: 2;
     width: 100%;
 }
 
 #site-title img {
-    max-height: rhythm();
-    max-width: calc(100% - #{rhythm(1.75)});
+    max-height: $base-line-height;
+    max-width: calc(100% - #{1.75 * $base-line-height});
 }
 
 #search-container {
@@ -83,7 +83,7 @@ header {
 }
 
 #search-container:not(.with-advanced) #search-form {
-    margin-bottom: rhythm(.5);
+    margin-bottom: (.5 * $base-line-height);
 
     &.open {
         position: relative;
@@ -118,7 +118,7 @@ header {
 }
 
 #top-nav ul {
-    margin: rhythm(.5) 0;
+    margin: (.5 * $base-line-height) 0;
 }
 
 header nav .navigation {
@@ -130,22 +130,22 @@ header nav .navigation {
 /* @group ----- Browse ----- */
 
 .browse .records {
-    padding: rhythm() 0;
+    padding: $base-line-height 0;
 }
 
 .browse .hentry,
 #collection-items .hentry {
     width: 100%;
-    border-color: $gray;
-    @include rhythm-borders(1px, .5, $base-font-size, solid);
-    margin-bottom: rhythm();
+    border: 1px solid $gray;
+    padding: ((.5 * $base-line-height) - 1px);
+    margin-bottom: $base-line-height;
 }
 
 .browse .hentry img,
 #collection-items .hentry img {
     max-width: 50%;
     float: left;
-    margin: 0 rhythm() rhythm(.25) 0;
+    margin: 0 $base-line-height (.25 * $base-line-height) 0;
 }
 
 .browse .hentry h2,
@@ -169,11 +169,11 @@ header nav .navigation {
 
 #search-filters ul li {
     font-size: .875 * $base-font-size;
-    margin: 0 rhythm(.125, .875 * $base-font-size) rhythm(.5, .875 * $base-font-size);
+    margin: 0 (.125 * $base-line-height) (.5 * $base-line-height);
 }
 
 #search-results {
-    margin-top: rhythm(.5);
+    margin-top: (.5 * $base-line-height);
 }
 
 .search-entry:first-child select {
@@ -182,7 +182,7 @@ header nav .navigation {
 
 .search-entry select {
     width: calc(50% - 2.25em);
-    margin-bottom: rhythm(.25);
+    margin-bottom: (.25 * $base-line-height);
 }
 
 .search-entry .advanced-search-joiner {
@@ -191,7 +191,7 @@ header nav .navigation {
 
 .search-entry input[type="text"] {
     width: 100%;
-    margin-bottom: rhythm(.25);
+    margin-bottom: (.25 * $base-line-height);
 }
 
 .field .inputs ~ .add_search {
@@ -214,7 +214,7 @@ header nav .navigation {
 }
 
 #exhibit-pages {
-    margin: rhythm(2) 0;
+    margin: (2 * $base-line-height) 0;
 }
 
 /* @end */

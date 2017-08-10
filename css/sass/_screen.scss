@@ -23,20 +23,20 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     text-align: center;
     font-size: 2 * $base-font-size;
-    margin-bottom: rhythm(1, 2 * $base-font-size);
+    margin-bottom: $base-line-height;
     line-height: 2 * $base-line-height;
     font-weight: normal;
 }
 
 h2 {
     font-size: 1.5 * $base-font-size;
-    margin-bottom: rhythm(1, 1.5 * $base-font-size);
+    margin-bottom: $base-line-height;
     line-height: 2 * $base-line-height;
     font-weight: normal;
 }
 
 p {
-    margin: rhythm() 0;
+    margin: $base-line-height 0;
 }
 
 /* @group ----- Mixins ----- */
@@ -63,25 +63,26 @@ footer {
 /* @group ----- Tables ----- */
 
 table {
-    margin: rhythm(2) auto;
+    margin: (2 * $base-line-height) auto;
     border-collapse: collapse;
     border-top: 1px solid $gray;
     border-bottom: 1px solid $gray;
 }
 
 th, td {
-    border-color: $gray;
-    padding: rhythm(.5);
+    padding: (.5 * $base-line-height);
     vertical-align: top;
 }
 
 th {
-    @include trailing-border(3px, .5, $base-font-size, solid);
+    border-bottom: 3px solid $gray;
+    padding-bottom: ((.5 * $base-line-height) - 3px);
     text-align: left;
 }
 
 td {
-    @include trailing-border(1px, .5, $base-font-size, solid);
+    border-bottom: 1px solid $gray;
+    padding-bottom: ((.5 * $base-line-height) - 1px);
 }
 
 /* @end */
@@ -133,7 +134,7 @@ input[type="submit"] {
 }
 
 .field {
-    margin-bottom: rhythm();
+    margin-bottom: $base-line-height;
     display: flex;
     flex-wrap: wrap;
 }
@@ -155,7 +156,7 @@ input[type="submit"] {
 .field .inputs ~ *,
 #submit_search_advanced {
     margin-left: calc(#{span(4 of 16)} + #{gutter()});
-    margin-top: rhythm(.5);
+    margin-top: (.5 * $base-line-height);
 }
 
 .field .inputs * {
@@ -163,16 +164,16 @@ input[type="submit"] {
 }
 
 #advanced-search-form {
-    padding: rhythm() 0;
+    padding: $base-line-height 0;
 }
 
 #submit_search_advanced {
     font-size: 1.25 * $base-font-size;
-    padding: rhythm(.25, 1.25 * $base-font-size);
+    padding: (.25 * $base-line-height);
 }
 
 .search-entry:not(:first-child) {
-    margin-top: rhythm(.5);
+    margin-top: (.5 * $base-line-height);
 }
 
 .search-entry:first-child .advanced-search-joiner {
@@ -189,8 +190,8 @@ nav ul {
 }
 
 .item-pagination.navigation {
-    border-color: $gray;
-    @include leading-border(1px, .5, $base-font-size, solid);
+    border-top: 1px solid $gray;
+    padding-top: ((.5 * $base-line-height) - 1px);
     display: flex;
     justify-content: space-between;
 }
@@ -201,14 +202,14 @@ nav ul {
 
 .secondary-nav ul {
     margin: 0 0 -1px;
-    border-color: $gray;
-    @include trailing-border(1px, 0, $base-font-size, solid);
+    border: 1px solid $gray;
+    padding-bottom: ((.5 * $base-line-height) - 1px);
 }
 
 .secondary-nav.navigation li {
     display: inline-block;
     margin-right: .5em;
-    padding-bottom: rhythm(.5);
+    padding-bottom: (.5 * $base-line-height);
 
     &.active a {
         color: $red;
@@ -228,7 +229,7 @@ nav ul {
     top: 0;
     left: -9999px;
     background-color: #fff;
-    padding: rhythm(.25);
+    padding: (.25 * $base-line-height);
     display: inline-block;
 
     &:focus {
@@ -239,13 +240,13 @@ nav ul {
 
 header nav .navigation {
     list-style-type: none;
-    padding: 0;
+    padding: ((.25 * $base-line-height) - 1px) 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-color: $gray;
-    @include h-borders(1px, .25, $base-font-size, solid);
-    margin: rhythm() 0;
+    border: 1px solid $gray;
+    border-width: 1px 0;
+    margin: $base-line-height 0;
 }
 
 header nav li {
@@ -265,7 +266,7 @@ header a {
     font-size: 1.5 * $base-font-size;
     text-transform: uppercase;
     letter-spacing: .125em;
-    margin: rhythm(2, 1.5 * $base-font-size) 0 0;
+    margin: (2 * $base-line-height) 0 0;
 }
 
 #site-title a {
@@ -274,7 +275,7 @@ header a {
 }
 
 #site-title img {
-    max-height: rhythm(3);
+    max-height: (3 * $base-line-height);
     max-width: 100%;
 }
 
@@ -282,12 +283,12 @@ header a {
     width: 100%;
     height: auto;
     vertical-align: top;
-    margin-bottom: rhythm();
+    margin-bottom: $base-line-height;
 }
 
 #search-container {
     position: absolute;
-    top: rhythm(-2);
+    top: (-2 * $base-line-height);
     right: gutter();
     z-index: 100;
 }
@@ -300,7 +301,7 @@ header a {
     height: 1.5 * $base-line-height;
     display: inline-block;
     line-height: $base-line-height;
-    padding: rhythm(.25);
+    padding: (.25 * $base-line-height);
     vertical-align: bottom;
     background-color: #fff;
     color: #676767;
@@ -308,7 +309,7 @@ header a {
 
 #search-form {
     display: flex;
-    padding: rhythm(.25) rhythm(.5) rhythm(.5);
+    padding: (.25 * $base-line-height) (.5 * $base-line-height) (.5 * $base-line-height);
     box-shadow: 0 0 0 1px #dedede inset;
     background: #fff;
 }
@@ -369,7 +370,7 @@ header a {
         content: "\f002";
         font-family: "FontAwesome";
         position: absolute;
-        top: rhythm(.25);
+        top: (.25 * $base-line-height);
         right: 0;
         text-indent: 0;
         width: 1.5 * $base-line-height;
@@ -387,7 +388,7 @@ header a {
     background-color: #fff;
     position: absolute;
     top: 100%;
-    padding: rhythm(.5);
+    padding: (.5 * $base-line-height);
     right: 0;
     left: 0;
     border: 1px solid $gray;
@@ -395,11 +396,11 @@ header a {
 }
 
 #advanced-form fieldset {
-    margin-bottom: rhythm(.5);
+    margin-bottom: (.5 * $base-line-height);
 }
 
 #advanced-form fieldset input {
-    margin-right: rhythm(.25);
+    margin-right: (.25 * $base-line-height);
 }
 
 #advanced-form p {
@@ -411,7 +412,7 @@ header a {
 /* @group ----- Footer ----- */
 
 footer {
-    margin-top: rhythm(2);
+    margin-top: (2 * $base-line-height);
     clear: both;
 }
 
@@ -449,7 +450,7 @@ footer {
 }
 
 [name="page"] {
-    width: rhythm(3);
+    width: (3 * $base-line-height);
     text-align: center;
 }
 
@@ -467,7 +468,7 @@ footer {
 
 .browse .hentry,
 #collection-items .hentry {
-    padding: rhythm() gutter();
+    padding: $base-line-height gutter();
     width: 25%;
     font-size: .875 * $base-font-size;
 }
@@ -514,7 +515,8 @@ footer {
         display: inline-block;
         border-color: $gray;
         font-size: 1.25 * $base-font-size;
-        @include rhythm-borders(1px, .25, 1.25 * $base-font-size, solid);
+        border: 1px solid $gray;
+        padding: ((.25 * $base-font-size) - 1px);
         margin: 0 .5em;
     }
 
@@ -562,26 +564,26 @@ footer {
 }
 
 #itemfiles-nav {
-    margin: rhythm() auto;
+    margin: $base-line-height auto;
     text-align: center
 }
 
 #itemfiles-nav img {
-    width: rhythm(3);
+    width: (3 * $base-line-height);
 }
 
 .element-set {
-    margin-bottom: rhythm(2);
+    margin-bottom: (2 * $base-line-height);
 }
 
 .element-set h2 {
-    border-color: $gray;
-    @include trailing-border(1px, .25, $base-font-size, solid);
+    border-bottom: 1px solid $gray;
+    padding-bottom: ((.25 * $base-line-height) - 1px);
 }
 
 .element {
     display: flex;
-    margin-bottom: rhythm();
+    margin-bottom: $base-line-height;
     flex-wrap: wrap;
     justify-content: flex-end;
 }
@@ -615,7 +617,7 @@ footer {
 }
 
 #home #featured {
-    margin: 0 0 rhythm(2);
+    margin: 0 0 (2 * $base-line-height);
     background-color: $gray;
 }
 
@@ -643,17 +645,17 @@ footer {
     right: 20%;
     transform: translateY(-50%);
     border: 1px solid #fff;
-    padding: rhythm();
+    padding: $base-line-height;
     color: #fff;
     text-align: center;
 
     &:after {
         content: "";
         position: absolute;
-        top: rhythm(-1);
-        bottom: rhythm(-1);
-        right: rhythm(-1);
-        left: rhythm(-1);
+        top: (-$base-line-height);
+        bottom: (-$base-line-height);
+        right: (-$base-line-height);
+        left: (-$base-line-height);
         background-color: rgba(0,0,0,.8);
         z-index: -1;
     }
@@ -685,7 +687,7 @@ footer {
     text-align: center;
     @include de-list;
     margin: 0;
-    padding: rhythm() 0;
+    padding: $base-line-height 0;
     
 }
 
@@ -713,11 +715,11 @@ footer {
 
 #search-results {
     width: 100%;
-    margin: rhythm() 0 0;
+    margin: $base-line-height 0 0;
 }
 
 #search-results img {
-    height: rhythm(3);
+    height: (3 * $base-line-height);
     float: right;
 }
 
@@ -738,9 +740,9 @@ footer {
 }
 
 #exhibit-page-navigation {
-    border-color: $gray;
-    @include leading-border(1px, .5, $base-font-size, solid);
-    margin-top: rhythm(2);
+    border-top: 1px solid $gray;
+    padding-top: ((.5 * $base-line-height) - 1px);
+    margin-top: (2 * $base-line-height);
 }
 
 .exhibits.show h1,
@@ -754,7 +756,7 @@ footer {
 }
 
 #exhibit-pages {
-    padding: 0 gutter() rhythm() 0;
+    padding: 0 gutter() $base-line-height 0;
     width: span(2.5 of 16);
 }
 
@@ -772,15 +774,15 @@ footer {
 }
 
 #exhibit-pages > ul > li:not(:last-of-type) {
-    border-color: $gray;
-    @include trailing-border(1px, .25, $base-font-size, solid);
-    margin-bottom: rhythm(.25);
+    padding-bottom: ((.25 * $base-line-height) - 1px);
+    border-bottom: 1px solid $gray;
+    margin-bottom: (.25 * $base-line-height);
 }
 
 #exhibit-pages h4 {
-    border-color: $gray;
-    @include trailing-border(3px, .25, $base-font-size, solid);
-    margin: 0 0 rhythm(.25);
+    border-bottom: 3px solid $gray;
+    padding-bottom: ((.25 * $base-line-height) - 3px);
+    margin: 0 0 (.25 * $base-line-height);
 }
 
 .summary #primary > div > *:first-child,

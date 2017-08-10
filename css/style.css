@@ -429,20 +429,20 @@ textarea {
   h1 {
     text-align: center;
     font-size: 36px;
-    margin-bottom: 0.66667em;
+    margin-bottom: 24px;
     line-height: 48px;
     font-weight: normal;
   }
 
   h2 {
     font-size: 27px;
-    margin-bottom: 0.88889em;
+    margin-bottom: 24px;
     line-height: 48px;
     font-weight: normal;
   }
 
   p {
-    margin: 1.33333em 0;
+    margin: 24px 0;
   }
 
   /* @group ----- Mixins ----- */
@@ -459,29 +459,26 @@ textarea {
   /* @end */
   /* @group ----- Tables ----- */
   table {
-    margin: 2.66667em auto;
+    margin: 48px auto;
     border-collapse: collapse;
     border-top: 1px solid #dedede;
     border-bottom: 1px solid #dedede;
   }
 
   th, td {
-    border-color: #dedede;
-    padding: 0.66667em;
+    padding: 12px;
     vertical-align: top;
   }
 
   th {
-    border-bottom-width: 0.16667em;
-    border-bottom-style: solid;
-    padding-bottom: 0.5em;
+    border-bottom: 3px solid #dedede;
+    padding-bottom: 9px;
     text-align: left;
   }
 
   td {
-    border-bottom-width: 0.05556em;
-    border-bottom-style: solid;
-    padding-bottom: 0.61111em;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 11px;
   }
 
   /* @end */
@@ -534,7 +531,7 @@ textarea {
   }
 
   .field {
-    margin-bottom: 1.33333em;
+    margin-bottom: 24px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -559,7 +556,7 @@ textarea {
   .field .inputs ~ *,
   #submit_search_advanced {
     margin-left: calc(25% + 0.625%);
-    margin-top: 0.66667em;
+    margin-top: 12px;
   }
 
   .field .inputs * {
@@ -567,16 +564,16 @@ textarea {
   }
 
   #advanced-search-form {
-    padding: 1.33333em 0;
+    padding: 24px 0;
   }
 
   #submit_search_advanced {
     font-size: 22.5px;
-    padding: 0.26667em;
+    padding: 6px;
   }
 
   .search-entry:not(:first-child) {
-    margin-top: 0.66667em;
+    margin-top: 12px;
   }
 
   .search-entry:first-child .advanced-search-joiner {
@@ -592,10 +589,8 @@ textarea {
   }
 
   .item-pagination.navigation {
-    border-color: #dedede;
-    border-top-width: 0.05556em;
-    border-top-style: solid;
-    padding-top: 0.61111em;
+    border-top: 1px solid #dedede;
+    padding-top: 11px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -610,16 +605,14 @@ textarea {
 
   .secondary-nav ul {
     margin: 0 0 -1px;
-    border-color: #dedede;
-    border-bottom-width: 0.05556em;
-    border-bottom-style: solid;
-    padding-bottom: -0.05556em;
+    border: 1px solid #dedede;
+    padding-bottom: 11px;
   }
 
   .secondary-nav.navigation li {
     display: inline-block;
     margin-right: .5em;
-    padding-bottom: 0.66667em;
+    padding-bottom: 12px;
   }
   .secondary-nav.navigation li.active a {
     color: #C72E2E;
@@ -636,7 +629,7 @@ textarea {
     top: 0;
     left: -9999px;
     background-color: #fff;
-    padding: 0.33333em;
+    padding: 6px;
     display: inline-block;
   }
   #skipnav:focus {
@@ -647,7 +640,7 @@ textarea {
 
   header nav .navigation {
     list-style-type: none;
-    padding: 0;
+    padding: 5px 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -656,14 +649,9 @@ textarea {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    border-color: #dedede;
-    border-top-width: 0.05556em;
-    border-top-style: solid;
-    padding-top: 0.27778em;
-    border-bottom-width: 0.05556em;
-    border-bottom-style: solid;
-    padding-bottom: 0.27778em;
-    margin: 1.33333em 0;
+    border: 1px solid #dedede;
+    border-width: 1px 0;
+    margin: 24px 0;
   }
 
   header nav li {
@@ -683,7 +671,7 @@ textarea {
     font-size: 27px;
     text-transform: uppercase;
     letter-spacing: .125em;
-    margin: 1.77778em 0 0;
+    margin: 48px 0 0;
   }
 
   #site-title a {
@@ -692,7 +680,7 @@ textarea {
   }
 
   #site-title img {
-    max-height: 4em;
+    max-height: 72px;
     max-width: 100%;
   }
 
@@ -700,12 +688,12 @@ textarea {
     width: 100%;
     height: auto;
     vertical-align: top;
-    margin-bottom: 1.33333em;
+    margin-bottom: 24px;
   }
 
   #search-container {
     position: absolute;
-    top: -2.66667em;
+    top: -48px;
     right: 0.625%;
     z-index: 100;
   }
@@ -718,7 +706,7 @@ textarea {
     height: 36px;
     display: inline-block;
     line-height: 24px;
-    padding: 0.33333em;
+    padding: 6px;
     vertical-align: bottom;
     background-color: #fff;
     color: #676767;
@@ -728,7 +716,7 @@ textarea {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 0.33333em 0.66667em 0.66667em;
+    padding: 6px 12px 12px;
     box-shadow: 0 0 0 1px #dedede inset;
     background: #fff;
   }
@@ -787,7 +775,7 @@ textarea {
     content: "\f002";
     font-family: "FontAwesome";
     position: absolute;
-    top: 0.33333em;
+    top: 6px;
     right: 0;
     text-indent: 0;
     width: 36px;
@@ -804,7 +792,7 @@ textarea {
     background-color: #fff;
     position: absolute;
     top: 100%;
-    padding: 0.66667em;
+    padding: 12px;
     right: 0;
     left: 0;
     border: 1px solid #dedede;
@@ -812,11 +800,11 @@ textarea {
   }
 
   #advanced-form fieldset {
-    margin-bottom: 0.66667em;
+    margin-bottom: 12px;
   }
 
   #advanced-form fieldset input {
-    margin-right: 0.33333em;
+    margin-right: 6px;
   }
 
   #advanced-form p {
@@ -826,7 +814,7 @@ textarea {
   /* @end */
   /* @group ----- Footer ----- */
   footer {
-    margin-top: 2.66667em;
+    margin-top: 48px;
     clear: both;
   }
 
@@ -863,7 +851,7 @@ textarea {
   }
 
   [name="page"] {
-    width: 4em;
+    width: 72px;
     text-align: center;
   }
 
@@ -886,7 +874,7 @@ textarea {
 
   .browse .hentry,
   #collection-items .hentry {
-    padding: 1.33333em 0.625%;
+    padding: 24px 0.625%;
     width: 25%;
     font-size: 15.75px;
   }
@@ -934,9 +922,8 @@ textarea {
     display: inline-block;
     border-color: #dedede;
     font-size: 22.5px;
-    border-width: 0.04444em;
-    border-style: solid;
-    padding: 0.22222em;
+    border: 1px solid #dedede;
+    padding: 3.5px;
     margin: 0 .5em;
   }
   #search-filters ul ul,
@@ -981,30 +968,28 @@ textarea {
   }
 
   #itemfiles-nav {
-    margin: 1.33333em auto;
+    margin: 24px auto;
     text-align: center;
   }
 
   #itemfiles-nav img {
-    width: 4em;
+    width: 72px;
   }
 
   .element-set {
-    margin-bottom: 2.66667em;
+    margin-bottom: 48px;
   }
 
   .element-set h2 {
-    border-color: #dedede;
-    border-bottom-width: 0.05556em;
-    border-bottom-style: solid;
-    padding-bottom: 0.27778em;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 5px;
   }
 
   .element {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-bottom: 1.33333em;
+    margin-bottom: 24px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     -webkit-box-pack: end;
@@ -1039,7 +1024,7 @@ textarea {
   }
 
   #home #featured {
-    margin: 0 0 2.66667em;
+    margin: 0 0 48px;
     background-color: #dedede;
   }
 
@@ -1069,17 +1054,17 @@ textarea {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     border: 1px solid #fff;
-    padding: 1.33333em;
+    padding: 24px;
     color: #fff;
     text-align: center;
   }
   #featured .featured-meta:after {
     content: "";
     position: absolute;
-    top: -1.33333em;
-    bottom: -1.33333em;
-    right: -1.33333em;
-    left: -1.33333em;
+    top: -24px;
+    bottom: -24px;
+    right: -24px;
+    left: -24px;
     background-color: rgba(0, 0, 0, 0.8);
     z-index: -1;
   }
@@ -1110,7 +1095,7 @@ textarea {
     list-style: none;
     padding: 0;
     margin: 0;
-    padding: 1.33333em 0;
+    padding: 24px 0;
   }
 
   #featured .slick-dots li {
@@ -1136,11 +1121,11 @@ textarea {
   /* @group ----- Search ----- */
   #search-results {
     width: 100%;
-    margin: 1.33333em 0 0;
+    margin: 24px 0 0;
   }
 
   #search-results img {
-    height: 4em;
+    height: 72px;
     float: right;
   }
 
@@ -1159,11 +1144,9 @@ textarea {
   }
 
   #exhibit-page-navigation {
-    border-color: #dedede;
-    border-top-width: 0.05556em;
-    border-top-style: solid;
-    padding-top: 0.61111em;
-    margin-top: 2.66667em;
+    border-top: 1px solid #dedede;
+    padding-top: 11px;
+    margin-top: 48px;
   }
 
   .exhibits.show h1,
@@ -1177,7 +1160,7 @@ textarea {
   }
 
   #exhibit-pages {
-    padding: 0 0.625% 1.33333em 0;
+    padding: 0 0.625% 24px 0;
     width: 15.625%;
   }
 
@@ -1195,19 +1178,15 @@ textarea {
   }
 
   #exhibit-pages > ul > li:not(:last-of-type) {
-    border-color: #dedede;
-    border-bottom-width: 0.05556em;
-    border-bottom-style: solid;
-    padding-bottom: 0.27778em;
-    margin-bottom: 0.33333em;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 6px;
   }
 
   #exhibit-pages h4 {
-    border-color: #dedede;
-    border-bottom-width: 0.16667em;
-    border-bottom-style: solid;
-    padding-bottom: 0.16667em;
-    margin: 0 0 0.33333em;
+    border-bottom: 3px solid #dedede;
+    padding-bottom: 3px;
+    margin: 0 0 6px;
   }
 
   .summary #primary > div > *:first-child,
@@ -1234,7 +1213,7 @@ textarea {
   /* @group ----- Containers ----- */
   #wrap,
   footer {
-    padding: 0 1.33333em;
+    padding: 0 24px;
   }
 
   /* @end */
@@ -1244,7 +1223,7 @@ textarea {
   .field .two.columns {
     width: 100%;
     text-align: left;
-    margin-bottom: 0.33333em;
+    margin-bottom: 6px;
   }
 
   .field .inputs,
@@ -1258,11 +1237,9 @@ textarea {
   #sort-links {
     width: 100%;
     text-align: center;
-    padding-top: 0.33333em;
-    border-color: #dedede;
-    border-bottom-width: 0.05556em;
-    border-bottom-style: solid;
-    padding-bottom: 0.27778em;
+    padding-top: 6px;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 5px;
   }
 
   .pagination-nav ul,
@@ -1281,7 +1258,7 @@ textarea {
   }
 
   #site-title {
-    margin: 0.33333em 0;
+    margin: 6px 0;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
@@ -1289,8 +1266,8 @@ textarea {
   }
 
   #site-title img {
-    max-height: 1.33333em;
-    max-width: calc(100% - 2.33333em);
+    max-height: 24px;
+    max-width: calc(100% - 42px);
   }
 
   #search-container {
@@ -1309,7 +1286,7 @@ textarea {
   }
 
   #search-container:not(.with-advanced) #search-form {
-    margin-bottom: 0.66667em;
+    margin-bottom: 12px;
   }
   #search-container:not(.with-advanced) #search-form.open {
     position: relative;
@@ -1347,7 +1324,7 @@ textarea {
   }
 
   #top-nav ul {
-    margin: 0.66667em 0;
+    margin: 12px 0;
   }
 
   header nav .navigation {
@@ -1359,24 +1336,22 @@ textarea {
   /* @end */
   /* @group ----- Browse ----- */
   .browse .records {
-    padding: 1.33333em 0;
+    padding: 24px 0;
   }
 
   .browse .hentry,
   #collection-items .hentry {
     width: 100%;
-    border-color: #dedede;
-    border-width: 0.05556em;
-    border-style: solid;
-    padding: 0.61111em;
-    margin-bottom: 1.33333em;
+    border: 1px solid #dedede;
+    padding: 11px;
+    margin-bottom: 24px;
   }
 
   .browse .hentry img,
   #collection-items .hentry img {
     max-width: 50%;
     float: left;
-    margin: 0 1.33333em 0.33333em 0;
+    margin: 0 24px 6px 0;
   }
 
   .browse .hentry h2,
@@ -1396,11 +1371,11 @@ textarea {
   /* @group ----- Search ----- */
   #search-filters ul li {
     font-size: 15.75px;
-    margin: 0 0.19048em 0.7619em;
+    margin: 0 3px 12px;
   }
 
   #search-results {
-    margin-top: 0.66667em;
+    margin-top: 12px;
   }
 
   .search-entry:first-child select {
@@ -1409,7 +1384,7 @@ textarea {
 
   .search-entry select {
     width: calc(50% - 2.25em);
-    margin-bottom: 0.33333em;
+    margin-bottom: 6px;
   }
 
   .search-entry .advanced-search-joiner {
@@ -1418,7 +1393,7 @@ textarea {
 
   .search-entry input[type="text"] {
     width: 100%;
-    margin-bottom: 0.33333em;
+    margin-bottom: 6px;
   }
 
   .field .inputs ~ .add_search {
@@ -1439,7 +1414,7 @@ textarea {
   }
 
   #exhibit-pages {
-    margin: 2.66667em 0;
+    margin: 48px 0;
   }
 
   /* @end */
