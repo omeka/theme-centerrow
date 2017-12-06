@@ -961,7 +961,7 @@ textarea {
     display: block;
   }
 
-  #itemfiles .item-file {
+  .item-file {
     text-align: center;
   }
 
