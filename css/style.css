@@ -109,7 +109,8 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -224,7 +225,8 @@ figure {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -325,7 +327,8 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -352,7 +355,8 @@ textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -406,7 +410,8 @@ textarea {
 
 @media screen {
   * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
 
   html {
@@ -605,7 +610,7 @@ textarea {
 
   .secondary-nav ul {
     margin: 0 0 -1px;
-    border: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
     padding-bottom: 11px;
   }
 
@@ -721,7 +726,8 @@ textarea {
     display: -ms-flexbox;
     display: flex;
     padding: 6px 12px 12px;
-    box-shadow: 0 0 0 1px #dedede inset;
+    -webkit-box-shadow: 0 0 0 1px #dedede inset;
+            box-shadow: 0 0 0 1px #dedede inset;
     background: #fff;
   }
 
