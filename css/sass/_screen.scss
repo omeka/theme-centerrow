@@ -612,6 +612,15 @@ footer {
     background-color: #000;
 }
 
+.view-items-link {
+    width: 100%;
+    text-align: center;
+    font-size: 1.125 * $base-font-size;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    padding: ((.5 * $base-line-height) - 1px) 0;
+}
+
 /* @end */
 
 /* @group ----- Home ----- */
