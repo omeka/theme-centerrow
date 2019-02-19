@@ -1,13 +1,16 @@
 (function($) {
     $(document).ready(function(){
-        var inContainer = $("#itemfiles-nav").Chocolat({
-        imageSize: "default",
-        loop: true,
-        container: "#itemfiles",
-        }).data("chocolat");
-    
-        inContainer.api().open()
-        inContainer.api().getElem("overlay").off("click.chocolat");
+        var itemFilesNav = $("#itemfiles-nav");
+        if (itemFilesNav.length > 0) {
+            var inContainer = itemFilesNav.Chocolat({
+            imageSize: "default",
+            loop: true,
+            container: "#itemfiles",
+            }).data("chocolat");
+        
+            inContainer.api().open()
+            inContainer.api().getElem("overlay").off("click.chocolat");
+        } 
     
         $(document).off("keydown.chocolat").on("keydown.chocolat", function(e) {
             if (inContainer.api().get("initialized")) {
