@@ -736,6 +736,54 @@ textarea {
       #search-filters ul ul li:not(:last-child):after,
       #item-filters ul ul li:not(:last-child):after {
         content: ", "; }
+  .hTagcloud ul {
+    list-style: none;
+    padding: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    .hTagcloud ul li {
+      padding: 6px 12px;
+      border: 1px solid #dedede;
+      margin: 0 12px 12px 0; }
+    .hTagcloud ul .vvvvvvvv-popular {
+      -ms-flex-order: 1;
+          order: 1;
+      font-size: 36px; }
+    .hTagcloud ul .vvvvvvv-popular {
+      -ms-flex-order: 2;
+          order: 2;
+      font-size: 33.75px; }
+    .hTagcloud ul .vvvvvv-popular {
+      -ms-flex-order: 3;
+          order: 3;
+      font-size: 31.5px; }
+    .hTagcloud ul .vvvvv-popular {
+      -ms-flex-order: 4;
+          order: 4;
+      font-size: 29.25px; }
+    .hTagcloud ul .vvvv-popular {
+      -ms-flex-order: 5;
+          order: 5;
+      font-size: 27px; }
+    .hTagcloud ul .vvv-popular {
+      -ms-flex-order: 6;
+          order: 6;
+      font-size: 24.75px; }
+    .hTagcloud ul .vv-popular {
+      -ms-flex-order: 7;
+          order: 7;
+      font-size: 22.5px; }
+    .hTagcloud ul .v-popular {
+      -ms-flex-order: 8;
+          order: 8;
+      font-size: 20.25px; }
+    .hTagcloud ul .popular {
+      -ms-flex-order: 9;
+          order: 9; }
   /* @end */
   /* @group ----- Show ----- */
   #itemfiles {
