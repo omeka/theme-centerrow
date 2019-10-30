@@ -18,7 +18,7 @@ $totalItems = metadata('collection', 'total_items');
             <div class="item-meta">
             <?php if (metadata('item', 'has files')): ?>
             <div class="item-img">
-                <?php echo link_to_item(item_image('thumbnail')); ?>
+                <?php echo link_to_item(item_image()); ?>
             </div>
             <?php endif; ?>
     
