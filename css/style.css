@@ -787,6 +787,8 @@ textarea {
   .show .download-file img {
     max-width: 100%;
     height: auto; }
+  #itemfiles {
+    padding-bottom: 0 !important; }
   #itemfiles,
   .lSSlideOuter .media-render {
     margin: 0;
