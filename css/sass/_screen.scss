@@ -590,6 +590,11 @@ footer {
 
 /* @group ----- Show ----- */
 
+.show .download-file img {
+    max-width: 100%;
+    height: auto;
+}
+
 #itemfiles,
 .lSSlideOuter .media-render {
     margin: 0;
