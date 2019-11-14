@@ -1,34 +1,36 @@
 (function($) {
-    $(document).ready(function(){
-        var itemFilesNav = $("#itemfiles-nav");
-        if (itemFilesNav.length > 0) {
-            var inContainer = itemFilesNav.Chocolat({
-            imageSize: "default",
-            loop: true,
-            container: "#itemfiles",
-            }).data("chocolat");
-        
-            inContainer.api().open()
-            inContainer.api().getElem("overlay").off("click.chocolat");
-        } 
-    
-        $(document).off("keydown.chocolat").on("keydown.chocolat", function(e) {
-            if (inContainer.api().get("initialized")) {
-                if (e.keyCode == 37) {
-                    inContainer.api().prev()
+    $(document).ready(function() {
+        if ($.isFunction($.fn.lightSlider)) {
+            $('#itemfiles').lightSlider({
+                mode: 'fade',
+                autoWidth: true,
+                adaptiveHeight:false,
+                gallery:true,
+                item:1,
+                loop:true,
+                thumbItem:10,
+                slideMargin:0,
+                enableDrag: false,
+                currentPagerPosition:'middle',
+                onSliderLoad: function(el) {
+                    el.lightGallery({
+                        selector: '#itemfiles .media',
+                        download: false,
+                        zoom: true,
+                        youtubePlayerParams: {
+                            modestbranding: 1,
+                            showinfo: 0,
+                            rel: 0,
+                            controls: 1
+                        },
+                        vimeoPlayerParams: {
+                            byline : 0,
+                            portrait : 0,
+                            color : 'A90707'
+                        },
+                    });
                 }
-                else if (e.keyCode == 39) {
-                    inContainer.api().next()
-                }
-            }
-        });
-
-        $(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange", function() {
-            if ((inContainer.api().get("fullscreenOpen")) && ($("#itemfiles").hasClass("chocolat-in-fullscreen") == false)) {
-                $("#itemfiles").addClass("chocolat-in-fullscreen");
-            } else {
-                $("#itemfiles").removeClass("chocolat-in-fullscreen");
-            }
-        });
+            });
+        }
     });
 })(jQuery)
