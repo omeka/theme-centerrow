@@ -395,6 +395,8 @@ textarea {
     font-weight: normal; }
   p {
     margin: 24px 0; }
+  img {
+    image-orientation: from-image; }
   /* @group ----- Mixins ----- */
   /* @end */
   /* @group ----- Containers ----- */

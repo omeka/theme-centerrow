@@ -39,6 +39,8 @@ p {
     margin: $base-line-height 0;
 }
 
+img {image-orientation:from-image;}
+
 /* @group ----- Mixins ----- */
 
 @mixin de-list {
