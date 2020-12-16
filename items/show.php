@@ -22,7 +22,7 @@ if ($hasImages) {
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 ?>
 
-<h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
+<h1><?php echo metadata('item', 'rich_title', array('no_escape' => true)); ?></h1>
 
 <?php if ($hasImages): ?>
     <ul id="itemfiles" <?php echo (count($images) == 1) ? 'class="solo"' : ''; ?>>
@@ -40,7 +40,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
             <?php echo file_image('original', array(), $image); ?>
             </div>
             <div class="media-link-<?php echo $imageCount; ?>">
-            <a href="<?php echo $fileUrl; ?>"><?php echo metadata($image, 'display_title'); ?></a>
+            <a href="<?php echo $fileUrl; ?>"><?php echo metadata($image, 'rich_title', array('no_escape' => true)); ?></a>
             </div>
         </li>
         <?php endforeach; ?>
@@ -76,7 +76,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
     <h3><?php echo __('Files'); ?></h3>
     <?php foreach ($nonImages as $nonImage): ?>
     <?php $fileLink = ($linkToFileMetadata == '1') ? record_url($nonImage) : $nonImage->getWebPath('original'); ?>
-    <div class="element-text"><a href="<?php echo $fileLink; ?>"><?php echo gettype($linkToFileMetadata); ?> <?php echo metadata($nonImage, 'display_title'); ?> - <?php echo $nonImage->mime_type; ?></a></div>
+    <div class="element-text"><a href="<?php echo $fileLink; ?>"><?php echo gettype($linkToFileMetadata); ?> <?php echo metadata($nonImage, 'rich_title', array('no_escape' => true)); ?> - <?php echo $nonImage->mime_type; ?></a></div>
     <?php endforeach; ?>
 </div>
 <?php endif; ?>
