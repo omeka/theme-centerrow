@@ -57,7 +57,9 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
                         <?php echo __('Your browser does not support HTML5 video.'); ?>
                     </video>
                 </div>
-                <?php echo file_image('fullsize', array(), $image); ?>
+                <div class="media-render">
+                    <?php echo file_image('fullsize', array(), $image); ?>
+                </div>
                 <div class="media-link-<?php echo $imageCount; ?>">
                     <a href="<?php echo $fileUrl; ?>"><?php echo metadata($image, 'rich_title', array('no_escape' => true)); ?></a>
                 </div>
