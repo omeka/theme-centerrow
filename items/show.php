@@ -5,7 +5,7 @@ $images = array();
 $nonImages = array();
 foreach ($itemFiles as $itemFile) {
     $mimeType = $itemFile->mime_type;
-    if (strpos($mimeType, 'image') !== false) {
+    if ((strpos($mimeType, 'image') !== false) || (strpos($mimeType, 'video') !== false)) {
         $images[] = $itemFile;
     } else {
         $nonImages[] = $itemFile;
@@ -30,6 +30,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
         <?php foreach ($images as $image): ?>
         <?php $imageCount++; ?>
         <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($image) : $image->getWebPath('original'); ?>
+        <?php if (strpos($image->mime_type, 'image') !== false): ?>
         <li 
             data-src="<?php echo $image->getWebPath('original'); ?>" 
             data-thumb="<?php echo $image->getWebPath('square_thumbnail'); ?>" 
@@ -43,6 +44,25 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
             <a href="<?php echo $fileUrl; ?>"><?php echo metadata($image, 'rich_title', array('no_escape' => true)); ?></a>
             </div>
         </li>
+        <?php else: ?>
+            <li 
+                data-thumb="<?php echo file_display_url($image, 'square_thumbnail'); ?>" 
+                data-html="#video-<?php echo $imageCount; ?>"
+                data-sub-html=".media-link-<?php echo $imageCount; ?>" 
+                class="media resource"
+            >
+                <div style="display: none;" id="video-<?php echo $imageCount; ?>">
+                    <video class="lg-video-object lg-html5" controls preload="none">
+                        <source src="<?php echo file_display_url($image, 'original'); ?>" type="<?php echo $image->mime_type; ?>">
+                        <?php echo __('Your browser does not support HTML5 video.'); ?>
+                    </video>
+                </div>
+                <?php echo file_image('fullsize', array(), $image); ?>
+                <div class="media-link-<?php echo $imageCount; ?>">
+                    <a href="<?php echo $fileUrl; ?>"><?php echo metadata($image, 'rich_title', array('no_escape' => true)); ?></a>
+                </div>
+            </li>
+        <?php endif; ?>
         <?php endforeach; ?>
     </ul>
 <?php endif; ?>
