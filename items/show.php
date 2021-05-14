@@ -1,18 +1,18 @@
 <?php
 $linkToFileMetadata = get_option('link_to_file_metadata');
 $itemFiles = $item->Files;
-$images = array();
-$nonImages = array();
+$visualMedia = array();
+$otherFiles = array();
 foreach ($itemFiles as $itemFile) {
     $mimeType = $itemFile->mime_type;
     if ((strpos($mimeType, 'image') !== false) || (strpos($mimeType, 'video') !== false)) {
-        $images[] = $itemFile;
+        $visualMedia[] = $itemFile;
     } else {
-        $nonImages[] = $itemFile;
+        $otherFiles[] = $itemFile;
     }
 }
-$hasImages = (count($images) > 0);
-if ($hasImages) {
+$hasVisualMedia = (count($visualMedia) > 0);
+if ($hasVisualMedia) {
     queue_css_file('lightslider.min');
     queue_css_file('lightgallery.min');
     queue_js_file('lightgallery-all.min', 'js');
@@ -24,44 +24,44 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 
 <h1><?php echo metadata('item', 'rich_title', array('no_escape' => true)); ?></h1>
 
-<?php if ($hasImages): ?>
-    <ul id="itemfiles" <?php echo (count($images) == 1) ? 'class="solo"' : ''; ?>>
-        <?php $imageCount = 0; ?>
-        <?php foreach ($images as $image): ?>
-        <?php $imageCount++; ?>
-        <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($image) : $image->getWebPath('original'); ?>
-        <?php if (strpos($image->mime_type, 'image') !== false): ?>
+<?php if ($hasVisualMedia): ?>
+    <ul id="itemfiles" <?php echo (count($visualMedia) == 1) ? 'class="solo"' : ''; ?>>
+        <?php $visualMediaCount = 0; ?>
+        <?php foreach ($visualMedia as $visualMediaFile): ?>
+        <?php $visualMediaCount++; ?>
+        <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($visualMediaFile) : $visualMediaFile->getWebPath('original'); ?>
+        <?php if (strpos($visualMediaFile->mime_type, 'image') !== false): ?>
         <li 
-            data-src="<?php echo $image->getWebPath('original'); ?>" 
-            data-thumb="<?php echo $image->getWebPath('square_thumbnail'); ?>" 
-            data-sub-html=".media-link-<?php echo $imageCount; ?>"
+            data-src="<?php echo $visualMediaFile->getWebPath('original'); ?>" 
+            data-thumb="<?php echo $visualMediaFile->getWebPath('square_thumbnail'); ?>" 
+            data-sub-html=".media-link-<?php echo $visualMediaCount; ?>"
             class="media resource"
         >
             <div class="media-render">
-            <?php echo file_image('original', array(), $image); ?>
+            <?php echo file_image('original', array(), $visualMediaFile); ?>
             </div>
-            <div class="media-link-<?php echo $imageCount; ?>">
-            <a href="<?php echo $fileUrl; ?>"><?php echo metadata($image, 'rich_title', array('no_escape' => true)); ?></a>
+            <div class="media-link-<?php echo $visualMediaCount; ?>">
+            <a href="<?php echo $fileUrl; ?>"><?php echo metadata($visualMediaFile, 'rich_title', array('no_escape' => true)); ?></a>
             </div>
         </li>
         <?php else: ?>
             <li 
-                data-thumb="<?php echo file_display_url($image, 'square_thumbnail'); ?>" 
-                data-html="#video-<?php echo $imageCount; ?>"
-                data-sub-html=".media-link-<?php echo $imageCount; ?>" 
+                data-thumb="<?php echo file_display_url($visualMediaFile, 'square_thumbnail'); ?>" 
+                data-html="#video-<?php echo $visualMediaCount; ?>"
+                data-sub-html=".media-link-<?php echo $visualMediaCount; ?>" 
                 class="media resource"
             >
-                <div style="display: none;" id="video-<?php echo $imageCount; ?>">
+                <div style="display: none;" id="video-<?php echo $visualMediaCount; ?>">
                     <video class="lg-video-object lg-html5" controls preload="none">
-                        <source src="<?php echo file_display_url($image, 'original'); ?>" type="<?php echo $image->mime_type; ?>">
+                        <source src="<?php echo file_display_url($visualMediaFile, 'original'); ?>" type="<?php echo $visualMediaFile->mime_type; ?>">
                         <?php echo __('Your browser does not support HTML5 video.'); ?>
                     </video>
                 </div>
                 <div class="media-render">
-                    <?php echo file_image('fullsize', array(), $image); ?>
+                    <?php echo file_image('fullsize', array(), $visualMediaFile); ?>
                 </div>
-                <div class="media-link-<?php echo $imageCount; ?>">
-                    <a href="<?php echo $fileUrl; ?>"><?php echo metadata($image, 'rich_title', array('no_escape' => true)); ?></a>
+                <div class="media-link-<?php echo $visualMediaCount; ?>">
+                    <a href="<?php echo $fileUrl; ?>"><?php echo metadata($visualMediaFile, 'rich_title', array('no_escape' => true)); ?></a>
                 </div>
             </li>
         <?php endif; ?>
@@ -69,8 +69,8 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
     </ul>
 <?php endif; ?>
 
-<?php if ((count($nonImages) > 0) && get_theme_option('other_media') == 0): ?>
-    <?php foreach ($nonImages as $nonImage): ?>
+<?php if ((count($otherFiles) > 0) && get_theme_option('other_media') == 0): ?>
+    <?php foreach ($otherFiles as $nonImage): ?>
         <?php echo file_markup($nonImage); ?>
     <?php endforeach; ?>
 <?php endif; ?>
@@ -93,10 +93,10 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 </div>
 <?php endif;?>
 
-<?php if ((count($nonImages) > 0) && get_theme_option('other_media') == 1): ?>
+<?php if ((count($otherFiles) > 0) && get_theme_option('other_media') == 1): ?>
 <div id="other-media" class="element">
     <h3><?php echo __('Files'); ?></h3>
-    <?php foreach ($nonImages as $nonImage): ?>
+    <?php foreach ($otherFiles as $nonImage): ?>
     <?php $fileLink = ($linkToFileMetadata == '1') ? record_url($nonImage) : $nonImage->getWebPath('original'); ?>
     <div class="element-text"><a href="<?php echo $fileLink; ?>"><?php echo gettype($linkToFileMetadata); ?> <?php echo metadata($nonImage, 'rich_title', array('no_escape' => true)); ?> - <?php echo $nonImage->mime_type; ?></a></div>
     <?php endforeach; ?>
