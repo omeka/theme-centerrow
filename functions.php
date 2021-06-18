@@ -35,4 +35,13 @@ function centerrow_output_text_track_file($textFile) {
 
     return $track;
 }
+
+function centerrow_check_for_tracks($files) {
+    foreach ($files as $file) {
+        if ($file->getExtension() == "vtt") {
+            return true;
+        }
+    }
+    return false;
+}
 ?>

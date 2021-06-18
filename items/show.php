@@ -52,16 +52,19 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
                 class="media resource"
             >
                 <div style="display: none;" id="video-<?php echo $visualMediaCount; ?>">
-                    <video class="lg-video-object lg-html5" controls preload="none">
+                    <?php $tracksPresent = centerrow_check_for_tracks($otherFiles); ?>
+                    <video class="lg-video-object lg-html5" controls preload="none" <?php echo ($tracksPresent) ? 'crossorigin="anonymous"' : ''; ?>>
                         <source src="<?php echo file_display_url($visualMediaFile, 'original'); ?>" type="<?php echo $visualMediaFile->mime_type; ?>">
                         <?php echo __('Your browser does not support HTML5 video.'); ?>
                         <?php $mediaName = pathinfo($visualMediaFile->original_filename, PATHINFO_FILENAME); ?>
+                        <?php if ($tracksPresent): ?>
                         <?php foreach ($otherFiles as $key => $otherFile): ?>
                             <?php if ($otherFile->original_filename == "$mediaName.vtt"): ?>
                                 <?php echo centerrow_output_text_track_file($otherFile); ?>
                                 <?php unset($otherFiles[$key]); ?>
                             <?php endif; ?>
                         <?php endforeach; ?>
+                        <?php endif; ?>
                     </video>
                 </div>
                 <div class="media-render">
