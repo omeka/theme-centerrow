@@ -33,6 +33,7 @@
     "> 1% in US"
   ],
   "dependencies": {
-    "nstall": "^0.2.0"
+    "nstall": "^0.2.0",
+    "postcss": "^8.3.5"
   }
 }
