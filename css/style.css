@@ -791,8 +791,14 @@ textarea {
   .lSSlideOuter .media-render img {
     max-height: 100%;
     width: auto; }
+  .lSPager li {
+    text-align: center; }
+  .lSPager li:only-of-type {
+    display: none; }
+  .lSPager a {
+    margin: 0 6px 12px;
+    display: inline-block; }
   .lSPager img {
-    margin: 0 12px 12px 0;
     vertical-align: bottom;
     width: 72px; }
   .lg-outer .lg-thumb {
