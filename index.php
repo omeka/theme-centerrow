@@ -35,7 +35,7 @@ queue_js_string('
 </div><!--end featured-item-->
 
 <?php if (get_theme_option('Homepage Text')): ?>
-<p><?php echo get_theme_option('Homepage Text'); ?></p>
+<div id="homepage-text"><?php echo get_theme_option('Homepage Text'); ?></div>
 <?php endif; ?>
 
 <?php fire_plugin_hook('public_home', array('view' => $this)); ?>
