@@ -28,21 +28,25 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
     <ul id="itemfiles" <?php echo (count($visualMedia) == 1) ? 'class="solo"' : ''; ?>>
         <?php $visualMediaCount = 0; ?>
         <?php foreach ($visualMedia as $visualMediaFile): ?>
-        <?php $squareThumbnail = centerrow_get_square_thumbnail_url($visualMediaFile, $this); ?>
-        <?php $visualMediaCount++; ?>
-        <?php $fileUrl = ($linkToFileMetadata == '1') ? record_url($visualMediaFile) : $visualMediaFile->getWebPath('original'); ?>
+        <?php 
+            $squareThumbnail = centerrow_get_square_thumbnail_url($visualMediaFile, $this); 
+            $visualMediaCount++;
+            $fileUrl = ($linkToFileMetadata == '1') ? record_url($visualMediaFile) : $visualMediaFile->getWebPath('original'); 
+            $mimeType = $visualMediaFile->mime_type;
+            $renderType = (strpos($mimeType, 'tiff') !== false) ? 'fullsize' : 'original';
+        ?>
         <?php if (strpos($visualMediaFile->mime_type, 'image') !== false): ?>
         <li 
-            data-src="<?php echo $visualMediaFile->getWebPath('original'); ?>" 
+            data-src="<?php echo $visualMediaFile->getWebPath($renderType); ?>" 
             data-thumb="<?php echo $squareThumbnail; ?>" 
             data-sub-html=".media-link-<?php echo $visualMediaCount; ?>"
             class="media resource"
         >
             <div class="media-render">
-            <?php echo file_image('original', array(), $visualMediaFile); ?>
+                <?php echo file_image('thumbnail', array(), $visualMediaFile); ?>
             </div>
             <div class="media-link-<?php echo $visualMediaCount; ?>">
-            <a href="<?php echo $fileUrl; ?>"><?php echo metadata($visualMediaFile, 'rich_title', array('no_escape' => true)); ?></a>
+                <a href="<?php echo $fileUrl; ?>"><?php echo metadata($visualMediaFile, 'rich_title', array('no_escape' => true)); ?></a>
             </div>
         </li>
         <?php else: ?>
