@@ -595,13 +595,15 @@ textarea {
     border-top: 0; }
     #search-form.closed + .search-toggle:after {
       content: "\f002";
-      font-family: "FontAwesome"; }
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900; }
   #search-form.open + .search-toggle {
     top: 0;
     right: 0; }
     #search-form.open + .search-toggle:after {
       content: "\f00d";
-      font-family: "FontAwesome"; }
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900; }
   #search-form.closed [type="text"],
   #search-form.closed [type="submit"],
   #search-form.closed #advanced-form {
@@ -613,7 +615,8 @@ textarea {
     position: relative; }
     #search-form button:after {
       content: "\f002";
-      font-family: "FontAwesome";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
       position: absolute;
       top: 6px;
       right: 0;
