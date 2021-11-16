@@ -55,4 +55,15 @@ function centerrow_get_square_thumbnail_url($file, $view) {
     }
     return $squareThumbnail;
 }
+
+function centerrow_public_nav_main()
+{
+    $view = get_view();
+    $nav = new Omeka_Navigation;
+    $nav->loadAsOption(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_OPTION_NAME);
+    $nav->addPagesFromFilter(Omeka_Navigation::PUBLIC_NAVIGATION_MAIN_FILTER_NAME);
+    $html = $view->navigation()->menu($nav)->setPartial('common/accessible-megamenu.php')->render();
+    $view->navigation()->menu($nav)->setPartial(null);
+    return $html;
+}
 ?>

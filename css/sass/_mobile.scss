@@ -123,6 +123,17 @@ header {
 
 header nav .navigation {
     justify-content: center;
+    flex-wrap: wrap;
+    margin: (.5 * $base-line-height) 0;
+}
+
+.sub-nav.first {
+    max-width: 100%;
+    margin: 0 $base-line-height;
+}
+
+.first.open.sub-nav > ul > li > ul > li {
+    width: 100%;
 }
 
 /* @end */

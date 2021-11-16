@@ -36,7 +36,7 @@
     <!-- JavaScripts -->
     <?php
     queue_js_file(array('globals'));
-    queue_js_file(array('centerrow'), 'js');
+    queue_js_file(array('centerrow', 'jQuery-accessibleMegaMenu'), 'js');
     echo head_js();
     ?>
 </head>
@@ -63,7 +63,7 @@
 
 
             <nav id="top-nav" role="navigation">
-                <?php echo public_nav_main(); ?>
+                <?php echo centerrow_public_nav_main(); ?>
             </nav>
 
             <?php echo theme_header_image(); ?>

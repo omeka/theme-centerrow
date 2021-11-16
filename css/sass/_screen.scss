@@ -256,10 +256,6 @@ header nav li {
     margin: 0 .5em;
 }
 
-header nav li ul {
-    display: none;
-}
-
 header nav a {
     font-size: .875 * $base-font-size;
 }
@@ -277,7 +273,6 @@ header a {
 
 #site-title a {
     display: block;
-    vertical-align: top;
 }
 
 #site-title img {
@@ -415,6 +410,172 @@ header a {
 #advanced-form p {
     margin: 0;
 }
+
+/* mega menu list */
+header nav ul {
+    display: block;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 15;
+}
+
+/* a top level navigation item in the mega menu */
+.nav-item {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+/* first descendant link within a top level navigation item */
+.nav-item > a {
+    position: relative;
+    display: inline-flex;
+    padding: (.25 * $base-line-height) (.5 * $base-line-height);
+    margin: 0 0 -1px 0;
+    border: 1px solid transparent;
+}
+
+/* focus/open states of first descendant link within a top level 
+    navigation item */
+.open {
+    border-bottom: 3px solid $gray;
+}
+
+.nav-item.open > a {
+    padding: (.25 * $base-line-height) (.5 * $base-line-height) ((.25 * $base-line-height) - 3px);
+}
+
+/* open state of first descendant link within a top level 
+    navigation item */
+.nav-item > a.open {
+    background-color: #fff;
+    border-bottom: 0;
+    z-index: 1;
+    margin-bottom: 0;
+    text-decoration: underline;
+}
+
+header nav > ul > li > .sub-nav-toggle {
+    margin-left: -(.5 * $base-line-height);
+    position: relative;
+    z-index: 1;
+}
+
+.nav-menu > .nav-item > [role="button"]:after {
+    content: "\00A0\00A0\f0da";
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    line-height: 1.5;
+    font-weight: 900;
+}
+
+.nav-menu > .nav-item > [aria-expanded="true"]:after {
+    content: "\00A0\00A0\f0d7";
+}
+
+a.parent {
+    font-weight: bold;
+}
+
+a.parent:after {
+    content: ":";
+}
+
+/* sub-navigation panel */
+.sub-nav {
+    position: fixed;
+    display: none;
+    border: 1px solid #dedede;
+    border-width: 1px 0;
+    background-color: #fff;
+    
+    &.first {
+        max-width: calc(100% - 1.25%);
+        margin: 0 auto;
+        padding: 0 (.5 * $base-line-height);
+    }
+}
+
+.first.open.sub-nav > ul > li > ul > li {
+    width: 25%;
+}
+
+.first.open.sub-nav ul ul ul {
+    display: block;
+    padding-left: $base-line-height;
+}
+
+@media screen and (min-width: 1100px) {
+    .sub-nav.first {
+        max-width: calc(1100px - 1.25%);
+    }
+}
+
+/* sub-navigation panel open state */
+.open.sub-nav,
+.open.sub-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.sub-nav-group .sub-nav-group {
+    margin-right: $base-line-height;
+}
+
+/* list of items within sub-navigation panel */
+.sub-nav ul {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.open.sub-nav > ul {
+    width: 100%;
+    display: block;
+}
+
+.open.sub-nav ul {
+    position: static;
+    border: 0;
+
+    li {
+        padding: (.25 * $base-line-height);
+    }
+
+    li a:not(.parent) {
+        padding-left: $base-line-height;
+        text-indent: -$base-line-height;
+        display: inline-block;
+    }
+
+    li a:not(.parent):before {
+        content: "\25C6";
+        display: inline-block;
+        width: $base-line-height;
+        margin-right: (-.125 * $base-line-height);
+        text-indent: 0;
+    }
+}
+
+.sub-nav .sub-nav-toggle {
+    display: none;
+}
+
+/* list item within sub-navigation panel */
+.sub-nav li {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: (.5 * $base-line-height);
+    position: relative;
+}    
 
 /* @end */
 

@@ -532,8 +532,6 @@ textarea {
   header nav li {
     display: block;
     margin: 0 .5em; }
-  header nav li ul {
-    display: none; }
   header nav a {
     font-size: 15.75px; }
   header a {
@@ -544,8 +542,7 @@ textarea {
     letter-spacing: .125em;
     margin: 48px 0 0; }
   #site-title a {
-    display: block;
-    vertical-align: top; }
+    display: block; }
   #site-title img {
     max-height: 72px;
     max-width: 100%; }
@@ -642,6 +639,122 @@ textarea {
     margin-right: 6px; }
   #advanced-form p {
     margin: 0; }
+  /* mega menu list */
+  header nav ul {
+    display: block;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 15; }
+  /* a top level navigation item in the mega menu */
+  .nav-item {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    height: 100%; }
+  /* first descendant link within a top level navigation item */
+  .nav-item > a {
+    position: relative;
+    display: inline-flex;
+    padding: 6px 12px;
+    margin: 0 0 -1px 0;
+    border: 1px solid transparent; }
+  /* focus/open states of first descendant link within a top level 
+    navigation item */
+  .open {
+    border-bottom: 3px solid #dedede; }
+  .nav-item.open > a {
+    padding: 6px 12px 3px; }
+  /* open state of first descendant link within a top level 
+    navigation item */
+  .nav-item > a.open {
+    background-color: #fff;
+    border-bottom: 0;
+    z-index: 1;
+    margin-bottom: 0;
+    text-decoration: underline; }
+  header nav > ul > li > .sub-nav-toggle {
+    margin-left: -12px;
+    position: relative;
+    z-index: 1; }
+  .nav-menu > .nav-item > [role="button"]:after {
+    content: "\00A0\00A0\f0da";
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    line-height: 1.5;
+    font-weight: 900; }
+  .nav-menu > .nav-item > [aria-expanded="true"]:after {
+    content: "\00A0\00A0\f0d7"; }
+  a.parent {
+    font-weight: bold; }
+  a.parent:after {
+    content: ":"; }
+  /* sub-navigation panel */
+  .sub-nav {
+    position: fixed;
+    display: none;
+    border: 1px solid #dedede;
+    border-width: 1px 0;
+    background-color: #fff; }
+    .sub-nav.first {
+      max-width: calc(100% - 1.25%);
+      margin: 0 auto;
+      padding: 0 12px; }
+  .first.open.sub-nav > ul > li > ul > li {
+    width: 25%; }
+  .first.open.sub-nav ul ul ul {
+    display: block;
+    padding-left: 24px; } }
+
+@media screen and (min-width: 1100px) {
+  .sub-nav.first {
+    max-width: calc(1100px - 1.25%); } }
+
+@media screen {
+  /* sub-navigation panel open state */
+  .open.sub-nav,
+  .open.sub-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    left: 0;
+    right: 0;
+    z-index: 999; }
+  .sub-nav-group .sub-nav-group {
+    margin-right: 24px; }
+  /* list of items within sub-navigation panel */
+  .sub-nav ul {
+    margin: 0;
+    padding: 0;
+    display: block; }
+  .open.sub-nav > ul {
+    width: 100%;
+    display: block; }
+  .open.sub-nav ul {
+    position: static;
+    border: 0; }
+    .open.sub-nav ul li {
+      padding: 6px; }
+    .open.sub-nav ul li a:not(.parent) {
+      padding-left: 24px;
+      text-indent: -24px;
+      display: inline-block; }
+    .open.sub-nav ul li a:not(.parent):before {
+      content: "\25C6";
+      display: inline-block;
+      width: 24px;
+      margin-right: -3px;
+      text-indent: 0; }
+  .sub-nav .sub-nav-toggle {
+    display: none; }
+  /* list item within sub-navigation panel */
+  .sub-nav li {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 12px;
+    position: relative; }
   /* @end */
   /* @group ----- Footer ----- */
   footer {
@@ -1033,7 +1146,14 @@ textarea {
   #top-nav ul {
     margin: 12px 0; }
   header nav .navigation {
-    justify-content: center; }
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 12px 0; }
+  .sub-nav.first {
+    max-width: 100%;
+    margin: 0 24px; }
+  .first.open.sub-nav > ul > li > ul > li {
+    width: 100%; }
   /* @end */
   /* @group ----- Browse ----- */
   .browse .records {
