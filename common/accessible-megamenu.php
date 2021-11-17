@@ -24,7 +24,7 @@ $layout = $this->navigation()->menu()->getUlClass();
                 if ($access) {
                     echo '<div class="sub-nav first"><ul><li class="sub-nav-group">';
                     echo '<a href="' . $page->getHref() . '" class="parent">' . html_escape($this->translate($page->getLabel())) . '</a>';
-                    echo ($access) ? $this->partial('common/sub-navigation.php', ['container'=> $container, 'children' => $page->getPages()]) : '';
+                    echo ($access) ? $this->partial('sub-navigation.php', ['container'=> $container, 'children' => $page->getPages()]) : '';
                     echo '</li></ul></div>';
                 }
             }
