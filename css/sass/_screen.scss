@@ -280,11 +280,17 @@ header a {
     max-width: 100%;
 }
 
+#header-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    max-width: 1100px;
+    margin: 0 auto $base-line-height;
+}
+
 #header-image img {
     width: 100%;
-    height: auto;
-    vertical-align: top;
-    margin-bottom: $base-line-height;
 }
 
 #search-container {
@@ -495,7 +501,7 @@ a.parent:after {
     
     &.first {
         max-width: calc(100% - 1.25%);
-        margin: 0 auto;
+        margin: 0 gutter();
         padding: 0 (.5 * $base-line-height);
     }
 }
@@ -511,7 +517,7 @@ a.parent:after {
 
 @media screen and (min-width: 1100px) {
     .sub-nav.first {
-        max-width: calc(1100px - 1.25%);
+        max-width: calc(1100px - (2 * #{gutter()}));
     }
 }
 
@@ -879,10 +885,6 @@ footer {
 /* @end */
 
 /* @group ----- Home ----- */
-
-#home #header-image {
-    display: none;
-}
 
 #home #featured {
     margin: 0 0 (2 * $base-line-height);
