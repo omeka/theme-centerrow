@@ -493,15 +493,15 @@ a.parent:after {
 
 /* sub-navigation panel */
 .sub-nav {
-    position: fixed;
+    position: absolute;
     display: none;
     border: 1px solid #dedede;
     border-width: 1px 0;
     background-color: #fff;
     
     &.first {
-        max-width: calc(100% - 1.25%);
-        margin: 0 gutter();
+        max-width: 100%;
+        margin: 0 auto;
         padding: 0 (.5 * $base-line-height);
     }
 }

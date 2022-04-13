@@ -886,15 +886,15 @@ nav ul {
 
   /* sub-navigation panel */
   .sub-nav {
-    position: fixed;
+    position: absolute;
     display: none;
     border: 1px solid #dedede;
     border-width: 1px 0;
     background-color: #fff;
   }
   .sub-nav.first {
-    max-width: 98.75%;
-    margin: 0 5.2631578947%;
+    max-width: 100%;
+    margin: 0 auto;
     padding: 0 12px;
   }
 
