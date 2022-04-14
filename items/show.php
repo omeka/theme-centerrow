@@ -3,21 +3,19 @@ $linkToFileMetadata = get_option('link_to_file_metadata');
 $itemFiles = $item->Files;
 $visualMedia = array();
 $otherFiles = array();
-foreach ($itemFiles as $itemFile) {
-    $mimeType = $itemFile->mime_type;
-    if ((strpos($mimeType, 'image') !== false) || (strpos($mimeType, 'video') !== false)) {
-        $visualMedia[] = $itemFile;
-    } else {
-        $otherFiles[] = $itemFile;
-    }
-}
+$sortedMedia = centerrow_sort_files($itemFiles);
+$visualMedia = (isset($sortedMedia['lightMedia'])) ? $sortedMedia['lightMedia'] : null;
+$otherMedia = (isset($sortedMedia['otherMedia'])) ? $sortedMedia['otherMedia'] : null;
 $hasVisualMedia = (count($visualMedia) > 0);
 if ($hasVisualMedia) {
-    queue_css_file('lightslider.min');
-    queue_css_file('lightgallery.min');
-    queue_js_file('lightgallery-all.min', 'js');
-    queue_js_file('lightslider.min', 'js');
-    queue_js_file('items-show', 'js');
+    queue_css_file('lightgallery.min', 'all', false, 'vendor/lightgallery/css');
+    queue_js_file('lightgallery.min', 'vendor/lightgallery/js');
+    queue_js_file('lg-thumbnail', 'vendor/lightgallery/js/plugins/thumbnail');
+    queue_js_file('lg-zoom', 'vendor/lightgallery/js/plugins/zoom');
+    queue_js_file('lg-video', 'vendor/lightgallery/js/plugins/video');
+    queue_js_file('lg-rotate', 'vendor/lightgallery/js/plugins/rotate');
+    queue_js_file('lg-hash', 'vendor/lightgallery/js/plugins/hash');
+    queue_js_file('lg-itemfiles-config', 'js');
 }
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 ?>
@@ -25,63 +23,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 <h1><?php echo metadata('item', 'rich_title', array('no_escape' => true)); ?></h1>
 
 <?php if ($hasVisualMedia): ?>
-    <ul id="itemfiles" <?php echo (count($visualMedia) == 1) ? 'class="solo"' : ''; ?>>
-        <?php $visualMediaCount = 0; ?>
-        <?php foreach ($visualMedia as $visualMediaFile): ?>
-        <?php 
-            $squareThumbnail = centerrow_get_square_thumbnail_url($visualMediaFile, $this); 
-            $visualMediaCount++;
-            $fileUrl = ($linkToFileMetadata == '1') ? record_url($visualMediaFile) : $visualMediaFile->getWebPath('original'); 
-            $mimeType = $visualMediaFile->mime_type;
-            $renderType = (strpos($mimeType, 'tiff') !== false) ? 'fullsize' : 'original';
-        ?>
-        <?php if (strpos($visualMediaFile->mime_type, 'image') !== false): ?>
-        <li 
-            data-src="<?php echo $visualMediaFile->getWebPath($renderType); ?>" 
-            data-thumb="<?php echo $squareThumbnail; ?>" 
-            data-sub-html=".media-link-<?php echo $visualMediaCount; ?>"
-            class="media resource"
-        >
-            <div class="media-render">
-                <?php echo file_image('thumbnail', array(), $visualMediaFile); ?>
-            </div>
-            <div class="media-link-<?php echo $visualMediaCount; ?>">
-                <a href="<?php echo $fileUrl; ?>"><?php echo metadata($visualMediaFile, 'rich_title', array('no_escape' => true)); ?></a>
-            </div>
-        </li>
-        <?php else: ?>
-            <li 
-                data-thumb="<?php echo $squareThumbnail; ?>" 
-                data-html="#video-<?php echo $visualMediaCount; ?>"
-                data-sub-html=".media-link-<?php echo $visualMediaCount; ?>" 
-                class="media resource"
-            >
-                <div style="display: none;" id="video-<?php echo $visualMediaCount; ?>">
-                    <?php $tracksPresent = centerrow_check_for_tracks($otherFiles); ?>
-                    <video class="lg-video-object lg-html5" controls preload="none" <?php echo ($tracksPresent) ? 'crossorigin="anonymous"' : ''; ?>>
-                        <source src="<?php echo file_display_url($visualMediaFile, 'original'); ?>" type="<?php echo $visualMediaFile->mime_type; ?>">
-                        <?php echo __('Your browser does not support HTML5 video.'); ?>
-                        <?php $mediaName = pathinfo($visualMediaFile->original_filename, PATHINFO_FILENAME); ?>
-                        <?php if ($tracksPresent): ?>
-                        <?php foreach ($otherFiles as $key => $otherFile): ?>
-                            <?php if ($otherFile->original_filename == "$mediaName.vtt"): ?>
-                                <?php echo centerrow_output_text_track_file($otherFile); ?>
-                                <?php unset($otherFiles[$key]); ?>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                        <?php endif; ?> 
-                    </video>
-                </div>
-                <div class="media-render">
-                    <?php echo file_image('fullsize', array(), $visualMediaFile); ?>
-                </div>
-                <div class="media-link-<?php echo $visualMediaCount; ?>">
-                    <a href="<?php echo $fileUrl; ?>"><?php echo metadata($visualMediaFile, 'rich_title', array('no_escape' => true)); ?></a>
-                </div>
-            </li>
-        <?php endif; ?>
-        <?php endforeach; ?>
-    </ul>
+<?php echo centerrow_output_lightgallery($visualMedia); ?>
 <?php endif; ?>
 
 <?php if ((count($otherFiles) > 0) && get_theme_option('other_media') == 0): ?>
