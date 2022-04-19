@@ -84,9 +84,9 @@ function centerrow_output_lightgallery($files = null) {
                 }
             }
             $videoSrcJson = json_encode($videoSrcObject);
-            $html .=  '<li data-video="' . html_escape($videoSrcJson) . '" ' . $mediaCaptionAttribute . 'data-thumb="' . html_escape(metadata($media, 'thumbnailUri')) . '" data-download-url="' . $source . '" class="media resource">';
+            $html .=  '<li data-video="' . html_escape($videoSrcJson) . '" ' . $mediaCaptionAttribute . 'data-thumb="' . html_escape(metadata($media, 'thumbnail_uri')) . '" data-download-url="' . $source . '" class="media resource">';
         } else if ($mediaType == 'application/pdf') {
-            $html .=  '<li data-iframe="' . html_escape($source) . '" '. $mediaCaptionAttribute . 'data-src="' . $source . '" data-thumb="' . html_escape(metadata($media, 'thumbnailUri')) . '" data-download-url="' . $source . '" class="media resource">';
+            $html .=  '<li data-iframe="' . html_escape($source) . '" '. $mediaCaptionAttribute . 'data-src="' . $source . '" data-thumb="' . html_escape(metadata($media, 'thumbnail_uri')) . '" data-download-url="' . $source . '" class="media resource">';
         } else {
             $html .=  '<li data-src="' . $source . '" ' . $mediaCaptionAttribute . 'data-thumb="' . html_escape(metadata($media, 'thumbnail_uri')) . '" data-download-url="' . $source . '" class="media resource">';
         }
