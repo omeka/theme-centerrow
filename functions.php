@@ -57,7 +57,7 @@ function centerrow_output_lightgallery($files = null) {
             'description' => 'data-sub-html="'. metadata($media, array('Dublin Core', 'Description')) . '"'
         ];
         $mediaCaptionAttribute = ($mediaCaption) ? $mediaCaptionOptions[$mediaCaption] : '';
-        $mediaType = $media->mime_type;
+        $mediaType = ($media->mime_type == 'video/quicktime') ? 'video/mp4' : $media->mime_type;
         if (strpos($mediaType, 'video') !== false) {
             $videoSrcObject = [
                 'source' => [
@@ -84,7 +84,8 @@ function centerrow_output_lightgallery($files = null) {
                 }
             }
             $videoSrcJson = json_encode($videoSrcObject);
-            $html .=  '<li data-video="' . html_escape($videoSrcJson) . '" ' . $mediaCaptionAttribute . 'data-thumb="' . html_escape(metadata($media, 'thumbnail_uri')) . '" data-download-url="' . $source . '" class="media resource">';
+            $videoThumbnail = ($media->hasThumbnail()) ? metadata($media, 'thumbnail_uri') : img('fallback-video.png');
+            $html .=  '<li data-video="' . html_escape($videoSrcJson) . '" ' . $mediaCaptionAttribute . 'data-thumb="' . html_escape($videoThumbnail) . '" data-download-url="' . $source . '" class="media resource">';
         } else if ($mediaType == 'application/pdf') {
             $html .=  '<li data-iframe="' . html_escape($source) . '" '. $mediaCaptionAttribute . 'data-src="' . $source . '" data-thumb="' . html_escape(metadata($media, 'thumbnail_uri')) . '" data-download-url="' . $source . '" class="media resource">';
         } else {
