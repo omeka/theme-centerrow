@@ -1201,6 +1201,11 @@ nav ul {
   }
 }
 @media screen {
+  .lg-container button {
+    background-color: transparent;
+  }
+}
+@media screen {
   .lg-icon.hidden {
     display: none;
   }
