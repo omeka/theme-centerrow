@@ -2,7 +2,7 @@
 $linkToFileMetadata = get_option('link_to_file_metadata');
 $itemFiles = $item->Files;
 $visualMedia = array();
-$otherFiles = array();
+$otherMedia = array();
 $sortedMedia = centerrow_sort_files($itemFiles);
 $visualMedia = (isset($sortedMedia['lightMedia'])) ? $sortedMedia['lightMedia'] : null;
 $otherMedia = (isset($sortedMedia['otherMedia'])) ? $sortedMedia['otherMedia'] : null;
@@ -26,8 +26,8 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 <?php echo centerrow_output_lightgallery($visualMedia); ?>
 <?php endif; ?>
 
-<?php if ((count($otherFiles) > 0) && get_theme_option('other_media') == 0): ?>
-    <?php foreach ($otherFiles as $nonImage): ?>
+<?php if ((count($otherMedia) > 0) && get_theme_option('other_media') == 0): ?>
+    <?php foreach ($otherMedia as $nonImage): ?>
         <?php echo file_markup($nonImage); ?>
     <?php endforeach; ?>
 <?php endif; ?>
@@ -50,10 +50,10 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 </div>
 <?php endif;?>
 
-<?php if ((count($otherFiles) > 0) && get_theme_option('other_media') == 1): ?>
+<?php if ((count($otherMedia) > 0) && get_theme_option('other_media') == 1): ?>
 <div id="other-media" class="element">
     <h3><?php echo __('Files'); ?></h3>
-    <?php foreach ($otherFiles as $nonImage): ?>
+    <?php foreach ($otherMedia as $nonImage): ?>
     <?php $fileLink = ($linkToFileMetadata == '1') ? record_url($nonImage) : $nonImage->getWebPath('original'); ?>
     <div class="element-text"><a href="<?php echo $fileLink; ?>"><?php echo metadata($nonImage, 'rich_title', array('no_escape' => true)); ?> - <?php echo $nonImage->mime_type; ?></a></div>
     <?php endforeach; ?>
