@@ -26,7 +26,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 <?php echo centerrow_output_lightgallery($visualMedia); ?>
 <?php endif; ?>
 
-<?php if ((count($otherMedia) > 0) && get_theme_option('other_media') == 1): ?>
+<?php if ((count($otherMedia) > 0) && get_theme_option('other_media') == 0): ?>
     <?php foreach ($otherMedia as $nonImage): ?>
         <?php echo file_markup($nonImage); ?>
     <?php endforeach; ?>
