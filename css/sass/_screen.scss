@@ -783,28 +783,6 @@ footer {
     bottom: 0;
 }
 
-.lg-container button {
-    background-color: transparent;
-}
-
-.lg-icon.hidden {
-    display: none;
-}
-
-.lg-icon.o-icon-undo {
-    font-size: 16px;
-    font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900;
-
-    &:before {
-        content: "\f0e2";
-    }
-}
-
-.lg-outer .lg-thumb {
-    margin: auto;
-}
-
 .element-set {
     margin-bottom: (2 * $base-line-height);
 }

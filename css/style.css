@@ -1201,31 +1201,6 @@ nav ul {
   }
 }
 @media screen {
-  .lg-container button {
-    background-color: transparent;
-  }
-}
-@media screen {
-  .lg-icon.hidden {
-    display: none;
-  }
-}
-@media screen {
-  .lg-icon.o-icon-undo {
-    font-size: 16px;
-    font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900;
-  }
-  .lg-icon.o-icon-undo:before {
-    content: "\f0e2";
-  }
-}
-@media screen {
-  .lg-outer .lg-thumb {
-    margin: auto;
-  }
-}
-@media screen {
   .element-set {
     margin-bottom: 48px;
   }
