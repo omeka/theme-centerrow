@@ -1180,6 +1180,9 @@ nav ul {
     max-width: 100%;
     height: auto;
   }
+  a.download-file {
+    color: #FFF;
+  }
 }
 @media screen {
   #itemfiles {
