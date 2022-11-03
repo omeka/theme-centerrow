@@ -418,7 +418,7 @@ textarea {
 
   a {
     color: #C72E2E;
-    text-decoration: none;
+    text-decoration: underline;
   }
   a:hover {
     text-decoration: underline;
