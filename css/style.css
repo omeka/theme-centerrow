@@ -420,6 +420,11 @@ textarea {
     color: #C72E2E;
     text-decoration: underline;
   }
+  
+  a:focus, button.focus {
+    border: solid 1px gold !important;
+  }
+  
   a:hover {
     text-decoration: underline;
   }
