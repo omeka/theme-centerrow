@@ -1,13 +1,12 @@
 <?php
-queue_css_url('//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css');
-queue_js_url('//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js');
+queue_css_url('//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css');
+queue_js_url('//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js');
 queue_js_string('
     jQuery(document).ready(function(){
       jQuery("#featured").slick({
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
+        autoplay: false,
         arrows: false,
         centerMode: true,
         fade: true,
