@@ -52,8 +52,6 @@ $sortLinks[__('Date Added')] = 'added';
     <?php endforeach; ?>
 </div>
 
-<?php echo pagination_links(); ?>
-
 <div id="outputs">
     <span class="outputs-label"><?php echo __('Output Formats'); ?></span>
     <?php echo output_format_list(false); ?>
