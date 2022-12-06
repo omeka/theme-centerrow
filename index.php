@@ -1,14 +1,16 @@
 <?php
+$autoplay = (get_theme_option('home_slider_autoplay') !== null) ? get_theme_option('home_slider_autoplay') : '1';
+$autoplaySpeed = (get_theme_option('home_slider_autoplay_speed') !== null) ? get_theme_option('home_slider_autoplay_speed') : '5000,';
+$autoplayOptions = ($autoplay == '1') ? 'autoplay: true, autoplaySpeed: ' . $autoplaySpeed : 'autoplay: false,';
 queue_css_url('//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css');
 queue_js_url('//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js');
 queue_js_string('
     jQuery(document).ready(function(){
       jQuery("#featured").slick({
         slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        arrows: false,
+        slidesToScroll: 1,' . 
+        $autoplayOptions . 
+        'arrows: false,
         centerMode: true,
         fade: true,
         dots: true
@@ -20,6 +22,7 @@ queue_js_string('
 
 <!-- Featured Item -->
 <div id="featured">
+
     <?php if (get_theme_option('Display Featured Item') !== '0' && count(get_random_featured_items()) > 0): ?>
     <?php echo random_featured_items(3); ?>
     <?php endif; ?>
