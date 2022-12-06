@@ -7,7 +7,9 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 
 <h1><?php echo metadata('item', 'rich_title', array('no_escape' => true)); ?></h1>
 
+<?php if ($itemFiles): ?>
 <?php echo $this->lightGallery($itemFiles); ?>
+<?php endif; ?>
 
 <?php echo all_element_texts('item'); ?>
 
@@ -27,7 +29,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 </div>
 <?php endif;?>
 
-<?php if (get_theme_option('other_media') == 1): ?>
+<?php if ((get_theme_option('other_media') == 1) && $itemFiles): ?>
 <?php echo $this->lightgallery($itemFiles, false); ?>
 <?php endif; ?>
 
