@@ -418,10 +418,14 @@ textarea {
 
   a {
     color: #C72E2E;
-    text-decoration: none;
+    text-decoration: underline;
   }
   a:hover {
-    text-decoration: underline;
+    -webkit-text-decoration: double underline;
+            text-decoration: double underline;
+  }
+  a:focus {
+    border: solid 1px #C72E2E;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -655,10 +659,6 @@ nav ul {
     font-size: 15.75px;
   }
 
-  header a {
-    text-decoration: none;
-  }
-
   #site-title {
     font-size: 27px;
     text-transform: uppercase;
@@ -867,7 +867,7 @@ nav ul {
     content: "  \f0da";
     font-family: "Font Awesome 5 Free";
     display: inline-block;
-    line-height: 1.5;
+    line-height: 1.4;
     font-weight: 900;
   }
 
