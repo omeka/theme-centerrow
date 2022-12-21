@@ -1238,8 +1238,9 @@ nav ul {
   }
 }
 @media screen {
-  .chocolat-overlay {
-    background-color: #000;
+  .other-files-link {
+    display: inline-flex;
+    align-items: center;
   }
 }
 @media screen {

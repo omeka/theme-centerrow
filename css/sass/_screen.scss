@@ -814,8 +814,9 @@ footer {
     margin-top: 0;
 }
 
-.chocolat-overlay {
-    background-color: #000;
+.other-files-link {
+  display: inline-flex;
+  align-items: center;
 }
 
 .collections.show .view-items-link {
