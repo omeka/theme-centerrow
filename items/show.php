@@ -1,14 +1,16 @@
 <?php
 $linkToFileMetadata = get_option('link_to_file_metadata');
 $itemFiles = $item->Files;
-queue_lightgallery_assets();
+if ($itemFiles) {
+    queue_lightgallery_assets();
+}
 echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
 ?>
 
 <h1><?php echo metadata('item', 'rich_title', array('no_escape' => true)); ?></h1>
 
 <?php if ($itemFiles): ?>
-<?php echo $this->lightGallery($itemFiles); ?>
+<?php echo lightGallery($itemFiles); ?>
 <?php endif; ?>
 
 <?php echo all_element_texts('item'); ?>
@@ -30,7 +32,7 @@ echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bod
 <?php endif;?>
 
 <?php if ((get_theme_option('other_media') == 1) && $itemFiles): ?>
-<?php echo $this->lightgallery($itemFiles, false); ?>
+<?php echo lightgallery_other_files($itemFiles); ?>
 <?php endif; ?>
 
 <!-- The following prints a citation for this item. -->
