@@ -1,7 +1,7 @@
 <?php
 $autoplay = (get_theme_option('home_slider_autoplay') !== null) ? get_theme_option('home_slider_autoplay') : '1';
-$autoplaySpeed = (get_theme_option('home_slider_autoplay_speed') !== null) ? get_theme_option('home_slider_autoplay_speed') : '5000,';
-$autoplayOptions = ($autoplay == '1') ? 'autoplay: true, autoplaySpeed: ' . $autoplaySpeed : 'autoplay: false,';
+$autoplaySpeed = (get_theme_option('home_slider_autoplay_speed') !== null) ? (int) get_theme_option('home_slider_autoplay_speed') : 5000;
+$autoplayOptions = ($autoplay == '1') ? 'autoplay: true, autoplaySpeed: ' . $autoplaySpeed . ',' : 'autoplay: false,';
 queue_css_url('//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css');
 queue_js_url('//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js');
 queue_js_string('
