@@ -179,6 +179,11 @@ input[type="submit"] {
     padding: (.25 * $base-line-height);
 }
 
+.search-entry {
+    border: 1px solid $gray;
+    padding: (.5 * $base-line-height) $base-line-height;
+}
+
 .search-entry:not(:first-child) {
     margin-top: (.5 * $base-line-height);
 }

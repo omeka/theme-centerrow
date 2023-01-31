@@ -33,6 +33,7 @@ header nav .navigation,
 table,
 th, 
 td,
+.search-entry,
 .item-pagination.navigation,
 .secondary-nav ul {
     border-color: <?php echo $borderColor; ?>

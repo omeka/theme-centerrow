@@ -580,6 +580,11 @@ input[type=submit] {
     padding: 6px;
   }
 
+  .search-entry {
+    border: 1px solid #dedede;
+    padding: 12px 24px;
+  }
+
   .search-entry:not(:first-child) {
     margin-top: 12px;
   }
