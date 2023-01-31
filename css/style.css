@@ -518,12 +518,14 @@ textarea {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-color: #fff;
-    border: 1px solid #dedede;
+    background: #fff url("../../../admin/themes/default/images/dropdown-arrow.png") no-repeat center right;
+    border: 1px solid;
     border-radius: 2px;
     font-size: 18px;
     line-height: 24px;
     color: #676767;
+    padding-right: 48px;
+    text-overflow: ellipsis;
   }
 
   button,
@@ -580,6 +582,10 @@ input[type=submit] {
 
   .search-entry:not(:first-child) {
     margin-top: 12px;
+  }
+
+  .search-entry:first-child .advanced-search-element {
+    margin-right: 2%;
   }
 
   .search-entry:first-child .advanced-search-joiner {
