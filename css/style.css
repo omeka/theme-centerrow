@@ -462,7 +462,7 @@ textarea {
     max-width: 1100px;
     margin: auto;
     position: relative;
-    padding: 0 5.2631578947%;
+    padding: 0 24px;
   }
 
   /* @end */
@@ -548,20 +548,20 @@ input[type=submit] {
   .field > label,
 .field > .label,
 .field .two.columns {
-    width: 24.0506329114%;
-    padding-right: 5.2631578947%;
+    width: 25%;
+    padding-right: 24px;
     text-align: right;
   }
 
   .field .inputs,
 .field .five.columns {
-    width: 74.6835443038%;
-    padding-left: 5.2631578947%;
+    width: 75%;
+    padding-left: 24px;
   }
 
   .field .inputs ~ *,
 #submit_search_advanced {
-    margin-left: calc(24.0506329114% + 5.2631578947%);
+    margin-left: calc(25% + 24px);
     margin-top: 12px;
   }
 
@@ -691,7 +691,7 @@ nav ul {
   #search-container {
     position: absolute;
     top: -48px;
-    right: 5.2631578947%;
+    right: 24px;
     z-index: 100;
   }
 
@@ -934,7 +934,7 @@ nav ul {
 }
 @media screen and (min-width: 1100px) {
   .sub-nav.first {
-    max-width: calc(1100px - (2 * 5.2631578947%));
+    max-width: calc(1100px - (2 * 24px));
   }
 }
 @media screen {
@@ -1061,7 +1061,7 @@ nav ul {
 @media screen {
   .browse .hentry,
 #collection-items .hentry {
-    padding: 24px 5.2631578947%;
+    padding: 24px;
     width: 25%;
     font-size: 15.75px;
   }
@@ -1220,16 +1220,16 @@ nav ul {
 }
 @media screen {
   .element h3 {
-    width: 24.0506329114%;
+    width: 25%;
     margin: 0;
     text-align: right;
-    padding: 0 5.2631578947% 0 0;
+    padding: 0 24px 0 0;
   }
 }
 @media screen {
   .element-text {
-    width: 74.6835443038%;
-    padding: 0 5.2631578947% 0 0;
+    width: 75%;
+    padding: 0 24px 0 0;
   }
 }
 @media screen {
@@ -1397,15 +1397,15 @@ nav ul {
 .exhibits #primary,
 #exhibit-blocks,
 #exhibit-page-navigation {
-    width: 81.0126582278%;
+    width: 81.25%;
     float: right;
-    padding-left: 5.2631578947%;
+    padding-left: 24px;
   }
 }
 @media screen {
   #exhibit-pages {
-    padding: 0 5.2631578947% 24px 0;
-    width: 15.1898734177%;
+    padding: 0 24px 24px 0;
+    width: 15.625%;
   }
 }
 @media screen {

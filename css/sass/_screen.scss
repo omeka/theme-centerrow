@@ -60,7 +60,7 @@ img {image-orientation:from-image;}
     max-width: 1100px;
     margin: auto;
     position: relative;
-    padding: 0 gutter();
+    padding: 0 $base-line-height;
 }
 
 /* @end */
@@ -147,20 +147,20 @@ input[type="submit"] {
 .field > label,
 .field > .label,
 .field .two.columns {
-    width: span(4 of 16);
-    padding-right: gutter();
+    width: 25%;
+    padding-right: $base-line-height;
     text-align: right;
 }
 
 .field .inputs,
 .field .five.columns {
-    width: span(12 of 16);
-    padding-left: gutter();
+    width: 75%;
+    padding-left: $base-line-height;
 }
 
 .field .inputs ~ *,
 #submit_search_advanced {
-    margin-left: calc(#{span(4 of 16)} + #{gutter()});
+    margin-left: calc(25% + #{$base-line-height});
     margin-top: (.5 * $base-line-height);
 }
 
@@ -295,7 +295,7 @@ header nav a {
 #search-container {
     position: absolute;
     top: (-2 * $base-line-height);
-    right: gutter();
+    right: $base-line-height;
     z-index: 100;
 }
 
@@ -516,7 +516,7 @@ a.parent:after {
 
 @media screen and (min-width: 1100px) {
     .sub-nav.first {
-        max-width: calc(1100px - (2 * #{gutter()}));
+        max-width: calc(1100px - (2 * #{$base-line-height}));
     }
 }
 
@@ -643,7 +643,7 @@ footer {
 
 .browse .hentry,
 #collection-items .hentry {
-    padding: $base-line-height gutter();
+    padding: $base-line-height;
     width: 25%;
     font-size: .875 * $base-font-size;
 }
@@ -799,15 +799,15 @@ footer {
 }
 
 .element h3 {
-    width: span(4 of 16);
+    width: 25%;
     margin: 0;
     text-align: right;
-    padding: 0 gutter() 0 0;
+    padding: 0 $base-line-height 0 0;
 }
 
 .element-text {
-    width: span(12 of 16);
-    padding: 0 gutter() 0 0;
+    width: 75%;
+    padding: 0 $base-line-height 0 0;
 }
 
 .element-text > *:first-child {
@@ -966,14 +966,14 @@ footer {
 .exhibits #primary,
 #exhibit-blocks,
 #exhibit-page-navigation {
-    width: span(13 of 16);
+    width: 81.25%;
     float: right;
-    padding-left: gutter();
+    padding-left: $base-line-height;
 }
 
 #exhibit-pages {
-    padding: 0 gutter() $base-line-height 0;
-    width: span(2.5 of 16);
+    padding: 0 $base-line-height $base-line-height 0;
+    width: 15.625%;
 }
 
 #exhibit-pages > ul {

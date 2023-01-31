@@ -6,9 +6,7 @@ gulp.task('css', function() {
     var autoprefixer = require('autoprefixer');
 
     return gulp.src('./css/sass/*.scss')
-        .pipe(sass({
-            includePaths: ['./node_modules/susy/sass']
-        }).on('error', sass.logError))
+        .pipe(sass().on('error', sass.logError))
         .pipe(postcss([autoprefixer]))
         .pipe(gulp.dest('./css'));
 });
