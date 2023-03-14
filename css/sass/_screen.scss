@@ -188,7 +188,22 @@ input[type="submit"] {
     margin-top: (.5 * $base-line-height);
 }
 
-.search-entry:first-child .advanced-search-element {
+#search-narrow-by-fields .advanced-search-joiner select {
+  width: auto;
+}
+
+#search-narrow-by-fields .advanced-search-joiner, 
+#search-narrow-by-fields .advanced-search-terms,
+.search-entry select {
+    width: 100%;
+}
+
+#search-narrow-by-fields .advanced-search-element, 
+#search-narrow-by-fields .advanced-search-type {
+    width: 49%;
+}
+
+.search-entry .advanced-search-element {
     margin-right: 2%;
 }
 
