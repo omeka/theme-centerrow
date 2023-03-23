@@ -187,17 +187,13 @@ header nav .navigation {
     margin-top: (.5 * $base-line-height);
 }
 
-.search-entry:first-child select {
-    width: 50%;
+.search-entry .input {
+    max-width: none;
 }
 
 .search-entry select {
-    width: calc(50% - 2.25em);
+    width: 100%;
     margin-bottom: (.25 * $base-line-height);
-}
-
-.search-entry .advanced-search-joiner {
-    width: 4em;
 }
 
 .search-entry input[type="text"] {

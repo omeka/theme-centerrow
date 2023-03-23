@@ -514,6 +514,21 @@ textarea {
     padding: 0;
   }
 
+  input[type=text],
+input[type=password],
+input[type=date],
+input[type=tel],
+input[type=email],
+input[type=search],
+input[type=number],
+input[type=month] {
+    -webkit-appearance: none;
+            appearance: none;
+    border: 1px solid;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
   select {
     appearance: none;
     -webkit-appearance: none;
@@ -582,7 +597,12 @@ input[type=submit] {
 
   .search-entry {
     border: 1px solid #dedede;
-    padding: 12px 24px;
+    padding: 12px;
+  }
+
+  .search-entry .input {
+    margin-right: 6px;
+    max-width: 30%;
   }
 
   .search-entry:not(:first-child) {
@@ -593,23 +613,12 @@ input[type=submit] {
     width: auto;
   }
 
-  #search-narrow-by-fields .advanced-search-joiner,
-#search-narrow-by-fields .advanced-search-terms,
-.search-entry select {
-    width: 100%;
-  }
-
-  #search-narrow-by-fields .advanced-search-element,
-#search-narrow-by-fields .advanced-search-type {
-    width: 49%;
-  }
-
-  .search-entry .advanced-search-element {
-    margin-right: 2%;
-  }
-
   .search-entry:first-child .advanced-search-joiner {
     display: none;
+  }
+
+  .remove_search {
+    break-before: always;
   }
 
   /* @end */
@@ -1651,17 +1660,13 @@ footer {
     margin-top: 12px;
   }
 
-  .search-entry:first-child select {
-    width: 50%;
+  .search-entry .input {
+    max-width: none;
   }
 
   .search-entry select {
-    width: calc(50% - 2.25em);
+    width: 100%;
     margin-bottom: 6px;
-  }
-
-  .search-entry .advanced-search-joiner {
-    width: 4em;
   }
 
   .search-entry input[type=text] {
