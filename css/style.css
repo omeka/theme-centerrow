@@ -904,6 +904,7 @@ nav ul {
     display: inline-block;
     line-height: 1.4;
     font-weight: 900;
+    width:18px;
   }
 
   .nav-menu > .nav-item > [aria-expanded=true]:after {
