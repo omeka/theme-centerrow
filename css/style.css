@@ -866,7 +866,7 @@ nav ul {
   /* first descendant link within a top level navigation item */
   .nav-item > a {
     position: relative;
-    display: inline-flex;
+    display: inline-block;
     padding: 6px 12px;
     margin: 0 0 -1px 0;
     border: 1px solid transparent;
@@ -889,7 +889,6 @@ nav ul {
     border-bottom: 0;
     z-index: 1;
     margin-bottom: 0;
-    text-decoration: underline;
   }
 
   header nav > ul > li > .sub-nav-toggle {
@@ -901,8 +900,6 @@ nav ul {
   .nav-menu > .nav-item > [role=button]:after {
     content: "  \f0da";
     font-family: "Font Awesome 5 Free";
-    display: inline-block;
-    line-height: 1.4;
     font-weight: 900;
   }
 
