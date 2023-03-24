@@ -507,6 +507,8 @@ header nav > ul > li > .sub-nav-toggle {
     content: "\00A0\00A0\f0da";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
+    display: inline-block;
+    width: $base-line-height;
 }
 
 .nav-menu > .nav-item > [aria-expanded="true"]:after {
