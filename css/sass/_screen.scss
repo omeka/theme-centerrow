@@ -703,6 +703,8 @@ footer {
 
 .browse .hentry img {
     max-width: 100%;
+    display: block;
+    margin-bottom: .5 * $base-line-height;
 }
 
 .browse .creator + .date {

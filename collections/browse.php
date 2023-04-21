@@ -18,14 +18,20 @@ $sortLinks[__('Date Added')] = 'added';
 <?php foreach (loop('collections') as $collection): ?>
     <div class="collection hentry">
 
-        <?php if ($collectionImage = record_image('collection')): ?>
-            <?php echo link_to_collection($collectionImage, array('class' => 'image')); ?>
-        <?php endif; ?>
+        <?php
+        $linkContent = '';
+        if ($collectionImage = record_image('collection')) {
+            $collectionImageFile = $collection->getFile();
+            $collectionImageTitle = metadata($collectionImageFile, 'rich_title', array('no_escape' => true));
+            $linkContent .= record_image('collection', null, array('alt' => '', 'title' => $collectionImageTitle));
+        }
+        $linkContent .= metadata($collection, 'rich_title', array('no_escape' => true));
+        ?>
 
-        <h2><?php echo link_to_collection(); ?></h2>
+        <h2><?php echo link_to_collection($linkContent); ?></h2>
 
         <?php if (metadata('collection', array('Dublin Core', 'Description'))): ?>
-        <div class="collection-description">
+        <div class="description">
             <?php echo text_to_paragraphs(metadata('collection', array('Dublin Core', 'Description'), array('snippet'=>150))); ?>
         </div>
         <?php endif; ?>

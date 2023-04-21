@@ -25,10 +25,16 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
     <?php foreach (loop('exhibit') as $exhibit): ?>
         <?php $exhibitCount++; ?>
         <div class="exhibit hentry <?php if ($exhibitCount%2==1) echo ' even'; else echo ' odd'; ?>">
-            <?php if ($exhibitImage = record_image($exhibit)): ?>
-                <?php echo exhibit_builder_link_to_exhibit($exhibit, $exhibitImage, array('class' => 'image')); ?>
-            <?php endif; ?>
-            <h2><?php echo link_to_exhibit(); ?></h2>
+            <?php 
+            $linkContent = '';
+            if ($exhibitImage = record_image($exhibit)) {
+                $exhibitImageFile = $exhibit->getFile();
+                $exhibitImageTitle = metadata($exhibitImageFile, 'rich_title', array('no_escape' => true));
+                $linkContent .= record_image($exhibit, null, array('alt' => '', 'title' => $exhibitImageTitle));
+            }
+            $linkContent .= metadata($exhibit, 'title', array('no_escape' => true));
+            ?>
+            <h2><?php echo link_to_exhibit($linkContent); ?></h2>
             <?php if ($exhibitDescription = metadata('exhibit', 'description', array('no_escape' => true))): ?>
             <div class="description"><?php echo $exhibitDescription; ?></div>
             <?php endif; ?>
