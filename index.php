@@ -2,8 +2,8 @@
 $autoplay = (get_theme_option('home_slider_autoplay') !== null) ? get_theme_option('home_slider_autoplay') : '1';
 $autoplaySpeed = (get_theme_option('home_slider_autoplay_speed') !== null) ? (int) get_theme_option('home_slider_autoplay_speed') : 5000;
 $autoplayOptions = ($autoplay == '1') ? 'autoplay: true, autoplaySpeed: ' . $autoplaySpeed . ',' : 'autoplay: false,';
-queue_css_url('//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.css');
-queue_js_url('//cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js');
+queue_css_url('//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css');
+queue_js_url('//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/accessible-slick-theme.min.css');
 queue_js_string('
     jQuery(document).ready(function(){
       jQuery("#featured").slick({
@@ -42,5 +42,8 @@ queue_js_string('
 <?php endif; ?>
 
 <?php fire_plugin_hook('public_home', array('view' => $this)); ?>
+
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js"></script>
 
 <?php echo foot(); ?>
