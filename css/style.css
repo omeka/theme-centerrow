@@ -1289,29 +1289,21 @@ nav ul {
   }
 }
 @media screen {
-  #home #featured {
+  #home #featured-slides {
     margin: 0 0 48px;
     background-color: #dedede;
+    position: relative;
   }
 }
 @media screen {
-  #home #featured .slick-list .image {
-    display: block;
-    height: 50vh;
-    overflow: hidden;
-  }
-}
-@media screen {
-  #featured img {
-    width: 100%;
+  #featured .record {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-@media screen {
-  #featured .slick-slide {
-    min-height: 50vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
   }
 }
 @media screen {
@@ -1338,7 +1330,7 @@ nav ul {
   }
 }
 @media screen {
-  #featured .featured-meta h3 {
+  #featured .featured-meta {
     font-size: 31.5px;
     line-height: 36px;
     margin: 0;
@@ -1346,10 +1338,10 @@ nav ul {
   }
 }
 @media screen {
-  #featured .featured-meta h3 a {
+  #featured .featured-meta a {
     color: #fff;
   }
-  #featured .featured-meta h3 a:hover {
+  #featured .featured-meta a:hover {
     text-decoration: none;
   }
 }
@@ -1357,6 +1349,20 @@ nav ul {
   #featured .featured-meta p {
     font-size: 15.75px;
     margin: 0;
+  }
+}
+@media screen {
+  #featured .slick-autoplay-toggle-button {
+    background-color: transparent;
+  }
+  #featured .slick-autoplay-toggle-button:focus {
+    color: #C72E2E;
+    outline: solid;
+  }
+}
+@media screen {
+  #featured .slick-slide {
+    min-height: 50vh;
   }
 }
 @media screen {

@@ -867,26 +867,20 @@ footer {
 
 /* @group ----- Home ----- */
 
-#home #featured {
+#home #featured-slides {
     margin: 0 0 (2 * $base-line-height);
     background-color: $gray;
+    position: relative;
 }
 
-#home #featured .slick-list .image {
-    display: block;
-    height: 50vh;
-    overflow: hidden;
-}
-
-#featured img {
-    width: 100%;
+#featured .record {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-#featured .slick-slide {
-    min-height: 50vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
 }
 
 #featured .featured-meta {
@@ -912,14 +906,14 @@ footer {
     }
 }
 
-#featured .featured-meta h3 {
+#featured .featured-meta {
     font-size: 1.75 * $base-font-size;
     line-height: 1.5 * $base-line-height;
     margin: 0;
     font-weight: normal;
 }
 
-#featured .featured-meta h3 a {
+#featured .featured-meta a {
     color: #fff;
 
     &:hover {
@@ -930,6 +924,19 @@ footer {
 #featured .featured-meta p {
     font-size: .875 * $base-font-size;
     margin: 0
+}
+
+#featured .slick-autoplay-toggle-button {
+    background-color: transparent;
+
+    &:focus {
+        color: $red;
+        outline: solid;
+    }
+}
+
+#featured .slick-slide {
+    min-height: 50vh;
 }
 
 #featured .slick-dots {

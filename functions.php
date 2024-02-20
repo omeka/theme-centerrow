@@ -1,13 +1,73 @@
 <?php
 
-function centerrow_display_featured_exhibit() {
+function centerrow_random_featured_records_html($recordType, $featuredRecords, $countStart)
+{
     $html = '';
-    $featuredExhibit = exhibit_builder_random_featured_exhibit();
-    if ($featuredExhibit) {
-        $html .= get_view()->partial('exhibit-builder/exhibits/single.php', array('exhibit' => $featuredExhibit));
+    $i = $countStart;
+
+    if ($featuredRecords) {
+        foreach ($featuredRecords as $featuredRecord) {
+            $html .= get_view()->partial('common/featured.php', array('recordType' => $recordType, 'featuredRecord' => $featuredRecord, 'slideCount' => $i));
+            $i++;
+        }
     }
-    $html = apply_filters('exhibit_builder_display_random_featured_exhibit', $html);
+    
+    if ($recordType == 'exhibit') {
+        $html = apply_filters('exhibit_builder_display_random_featured_exhibit', $html);        
+    }
+
     return $html;
+}
+
+function centerrow_get_random_featured_records($recordType, $num = 0, $hasImage = true)
+{
+    return get_records($recordType, array('featured' => 1,
+                                     'sort_field' => 'random',
+                                     'hasImage' => $hasImage), $num);
+}
+
+function centerrow_featured_html() {
+    $recordTypes = ['Exhibit', 'Collection', 'Item'];
+
+    $html = '';
+    $countStart = 1;
+    
+    foreach ($recordTypes as $recordType) {
+        if ($recordType == 'Exhibit' && !plugin_is_active('ExhibitBuilder')) {
+            continue;
+        }
+
+        $randomRecords = null;
+        $randomRecords = centerrow_get_random_featured_records($recordType);
+
+        if ((get_theme_option("Display Featured $recordType") !== '0') && ($randomRecords !== null)) {
+            $html .= centerrow_random_featured_records_html(strtolower($recordType), $randomRecords, $countStart);
+            $countStart = $countStart + count($randomRecords);
+        }
+    }
+           
+    return $html;
+}
+
+function centerrow_check_for_featured_records() {
+    $recordTypes = ['Exhibit', 'Collection', 'Item'];
+    $featuredPresent = false;
+
+    foreach ($recordTypes as $recordType) {
+        if (get_theme_option('display_featured_' . strtolower($recordType)) == '1') {
+            if ($recordType == 'Exhibit' && !plugin_is_active('ExhibitBuilder')) {
+                continue;
+            }
+            $randomRecords = centerrow_get_random_featured_records($recordType);
+
+            if (count($randomRecords) > 0) {
+                $featuredPresent = true;
+                break;
+            }
+        }
+    }
+
+    return $featuredPresent;
 }
 
 function centerrow_get_square_thumbnail_url($file, $view) {
