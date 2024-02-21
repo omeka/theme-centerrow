@@ -1394,6 +1394,16 @@ nav ul {
   }
 }
 @media screen {
+  #featured .slick-dots .slick-active button {
+    background-color: #929292;
+  }
+}
+@media screen {
+  #featured .slick-autoplay-toggle-button {
+    color: #929292;
+  }
+}
+@media screen {
   #featured .slick-dots li[aria-hidden=false] button {
     background-color: #9e9e9e;
   }

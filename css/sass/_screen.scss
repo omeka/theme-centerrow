@@ -964,6 +964,14 @@ footer {
     margin: 0 .5em;
 }
 
+#featured .slick-dots .slick-active button {
+    background-color: darken($gray, 30%);
+}
+
+#featured .slick-autoplay-toggle-button {
+    color: darken($gray, 30%);
+}
+
 #featured .slick-dots li[aria-hidden="false"] button {
     background-color: darken($gray, 25%);
 }
