@@ -945,7 +945,7 @@ footer {
     text-align: center;
     @include de-list;
     margin: 0;
-    padding: $base-line-height 0;
+    bottom: (-1 * $base-line-height);
     
 }
 
