@@ -955,9 +955,9 @@ footer {
 
 #featured .slick-dots button {
     background-color: $gray;
-    width: .75 * $base-font-size;
-    height: .75 * $base-font-size;
-    border-radius: $base-font-size;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
     text-indent: -9999px;
     border: 0;
     cursor: pointer;
