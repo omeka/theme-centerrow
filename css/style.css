@@ -1143,6 +1143,46 @@ nav ul {
   }
 }
 @media screen {
+  .sort-icon {
+    position: relative;
+    height: 24px;
+  }
+}
+@media screen {
+  .desc .sort-icon:before,
+.asc .sort-icon:after {
+    content: "\f0dd";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+}
+@media screen {
+  .asc .sort-icon:before,
+.desc .sort-icon:after {
+    content: "\f0de";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+}
+@media screen {
+  .sort-icon:before,
+.sort-icon:after {
+    line-height: 24px;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+@media screen {
+  .sort-icon:after {
+    opacity: 0.3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+@media screen {
   .browse .records,
 #collection-items {
     display: flex;

@@ -721,6 +721,41 @@ footer {
     }
 }
 
+.sort-icon {
+    position: relative;
+    height: $base-line-height;
+}
+
+.desc .sort-icon:before,
+.asc .sort-icon:after {
+    content: "\f0dd";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.asc .sort-icon:before,
+.desc .sort-icon:after {
+    content: "\f0de";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.sort-icon:before,
+.sort-icon:after {
+    line-height: $base-line-height;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.sort-icon:after {
+    opacity: .3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
 .browse .records,
 #collection-items {
     display: flex;
