@@ -547,12 +547,14 @@ html [type=button],
 .button,
 input[type=submit] {
     background-color: #dedede;
+    color: #676767;
     border: 0;
     cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border-radius: 0;
+    padding: 6px;
+    min-height: 36px;
+    min-width: 36px;
+    line-height: 24px;
+    text-align: center;
   }
 
   .field {
@@ -1047,6 +1049,15 @@ nav ul {
   }
 }
 @media screen {
+  .browse-controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    width: 100%;
+  }
+}
+@media screen {
   .pagination-nav,
 #sort-links {
     display: inline-block;
@@ -1060,7 +1071,6 @@ nav ul {
   .pagination-nav li,
 #sort-links li {
     display: inline-block;
-    margin: 0 0.5em;
   }
   .pagination-nav a,
 #sort-links a {
@@ -1072,14 +1082,64 @@ nav ul {
   }
 }
 @media screen {
+  .pagination-nav {
+    float: right;
+    padding: 12px 0;
+  }
+  .pagination-nav > * {
+    display: inline-block;
+  }
+}
+@media screen {
+  .pagination-nav .button {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #dedede;
+    height: 37.2px;
+    line-height: 36px;
+    padding: 0 12px;
+    text-align: center;
+    text-decoration: none;
+  }
+}
+@media screen {
+  .pagination-nav .inactive.button {
+    display: inline-block;
+    opacity: 0.5;
+  }
+}
+@media screen {
+  .pagination-nav .row-count {
+    line-height: 36px;
+  }
+}
+@media screen {
   [name=page] {
     width: 72px;
     text-align: center;
+    margin: 0 6px;
+  }
+}
+@media screen {
+  .o-icon-previous:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f104";
+    font-weight: 900;
+  }
+}
+@media screen {
+  .o-icon-next:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f105";
+    font-weight: 900;
   }
 }
 @media screen {
   #sort-links {
     float: right;
+  }
+  #sort-links li {
+    margin: 0 0.5em;
   }
 }
 @media screen {

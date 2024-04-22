@@ -18,7 +18,9 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
     )); ?>
 </nav>
 
-<?php echo pagination_links(); ?>
+<div class="browse-controls">
+    <?php echo pagination_links(); ?>
+</div>
 
 <div class="records">
     <?php $exhibitCount = 0; ?>
@@ -45,7 +47,9 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
     <?php endforeach; ?>
 </div>
 
-<?php echo pagination_links(); ?>
+<div class="browse-controls">
+    <?php echo pagination_links(); ?>
+</div>
 
 <?php else: ?>
 <p><?php echo __('There are no exhibits available yet.'); ?></p>

@@ -146,12 +146,14 @@ html [type="button"],
 .button,
 input[type="submit"] {
     background-color: $gray;
+    color: $dark-gray;
     border: 0;
     cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border-radius: 0;
+    padding: $spacing-s;
+    min-height: 1.5 * $spacing-l;
+    min-width: 1.5 * $spacing-l;
+    line-height: $base-line-height;
+    text-align: center;
 }
 
 .field {
@@ -634,6 +636,14 @@ footer {
 
 /* @group ----- Browse ----- */
 
+.browse-controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+
 .pagination-nav,
 #sort-links {
     display: inline-block;
@@ -645,7 +655,6 @@ footer {
 
     li {
         display: inline-block;
-        margin: 0 .5em;
     }
 
     a {
@@ -657,13 +666,59 @@ footer {
     }
 }
 
+.pagination-nav {
+    float: right;
+    padding: $spacing-m 0;
+
+    & > * {
+        display: inline-block;
+    }
+}
+
+.pagination-nav .button {
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid $gray;
+    height: 1.55 * $base-line-height;
+    line-height: 1.5 * $base-line-height;
+    padding: 0 (.5 * $base-line-height);
+    text-align: center;
+    text-decoration: none;
+}
+
+.pagination-nav .inactive.button {
+    display: inline-block;
+    opacity: .5;
+}
+
+.pagination-nav .row-count {
+    line-height: 1.5 * $base-line-height;
+}
+
 [name="page"] {
     width: (3 * $base-line-height);
     text-align: center;
+    margin: 0 (.25 * $base-line-height);
+}
+
+.o-icon-previous:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f104";
+    font-weight: 900;
+}
+
+.o-icon-next:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f105";
+    font-weight: 900;
 }
 
 #sort-links {
     float: right;
+
+    li {
+        margin: 0 .5em;
+    }
 }
 
 .browse .records,
