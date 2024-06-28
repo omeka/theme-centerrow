@@ -959,7 +959,6 @@ footer {
 
 #home #featured-slides {
     margin: 0 0 (2 * $base-line-height);
-    background-color: $gray;
     position: relative;
 }
 
@@ -1025,6 +1024,10 @@ footer {
     }
 }
 
+#featured .slick-list {
+    padding-bottom: $spacing-l;
+}
+
 #featured .slick-slide {
     min-height: 50vh;
 }
@@ -1041,17 +1044,21 @@ footer {
 
 #featured .slick-dots li {
     display: inline-block;
+    margin: 0 .75em;
+    vertical-align: 6px;
 }
 
 #featured .slick-dots button {
     background-color: $gray;
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     border-radius: 24px;
     text-indent: -9999px;
     border: 0;
     cursor: pointer;
     margin: 0 .5em;
+    min-height: 0;
+    min-width: 0;
 }
 
 #featured .slick-dots .slick-active button {

@@ -1391,7 +1391,6 @@ nav ul {
 @media screen {
   #home #featured-slides {
     margin: 0 0 48px;
-    background-color: #dedede;
     position: relative;
   }
 }
@@ -1461,6 +1460,11 @@ nav ul {
   }
 }
 @media screen {
+  #featured .slick-list {
+    padding-bottom: 24px;
+  }
+}
+@media screen {
   #featured .slick-slide {
     min-height: 50vh;
   }
@@ -1479,18 +1483,22 @@ nav ul {
 @media screen {
   #featured .slick-dots li {
     display: inline-block;
+    margin: 0 0.75em;
+    vertical-align: 6px;
   }
 }
 @media screen {
   #featured .slick-dots button {
     background-color: #dedede;
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     border-radius: 24px;
     text-indent: -9999px;
     border: 0;
     cursor: pointer;
     margin: 0 0.5em;
+    min-height: 0;
+    min-width: 0;
   }
 }
 @media screen {
