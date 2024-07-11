@@ -982,6 +982,10 @@ footer {
     padding: $base-line-height;
     color: #fff;
     text-align: center;
+    font-size: 1.75 * $base-font-size;
+    line-height: 1.5 * $base-line-height;
+    margin: 0;
+    font-weight: normal;
 
     &:after {
         content: "";
@@ -995,11 +999,11 @@ footer {
     }
 }
 
-#featured .featured-meta {
-    font-size: 1.75 * $base-font-size;
-    line-height: 1.5 * $base-line-height;
-    margin: 0;
-    font-weight: normal;
+#featured .featured-meta .creator,
+#featured .featured-meta .date {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    display: block;
 }
 
 #featured .featured-meta a {

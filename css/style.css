@@ -1416,6 +1416,10 @@ nav ul {
     padding: 24px;
     color: #fff;
     text-align: center;
+    font-size: 31.5px;
+    line-height: 36px;
+    margin: 0;
+    font-weight: normal;
   }
   #featured .featured-meta:after {
     content: "";
@@ -1429,11 +1433,11 @@ nav ul {
   }
 }
 @media screen {
-  #featured .featured-meta {
-    font-size: 31.5px;
-    line-height: 36px;
-    margin: 0;
-    font-weight: normal;
+  #featured .featured-meta .creator,
+#featured .featured-meta .date {
+    font-size: 18px;
+    line-height: 24px;
+    display: block;
   }
 }
 @media screen {
