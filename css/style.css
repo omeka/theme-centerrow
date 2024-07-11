@@ -1453,15 +1453,11 @@ nav ul {
 @media screen {
   #featured .slick-autoplay-toggle-button {
     background-color: transparent;
+    bottom: 0;
   }
   #featured .slick-autoplay-toggle-button:focus {
     color: #C72E2E;
     outline: solid;
-  }
-}
-@media screen {
-  #featured .slick-list {
-    padding-bottom: 24px;
   }
 }
 @media screen {
@@ -1476,8 +1472,11 @@ nav ul {
     text-align: center;
     list-style: none;
     padding: 0;
-    margin: 0;
-    bottom: -24px;
+    margin: 0 0 0 auto;
+    position: relative;
+    width: calc(100% - 36px);
+    bottom: 0;
+    padding: 12px;
   }
 }
 @media screen {

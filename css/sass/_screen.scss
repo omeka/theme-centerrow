@@ -1017,15 +1017,12 @@ footer {
 
 #featured .slick-autoplay-toggle-button {
     background-color: transparent;
+    bottom: 0;
 
     &:focus {
         color: $red;
         outline: solid;
     }
-}
-
-#featured .slick-list {
-    padding-bottom: $spacing-l;
 }
 
 #featured .slick-slide {
@@ -1037,9 +1034,11 @@ footer {
     width: 100%;
     text-align: center;
     @include de-list;
-    margin: 0;
-    bottom: (-1 * $base-line-height);
-    
+    margin: 0 0 0 auto;
+    position: relative;
+    width: calc(100% - 36px);
+    bottom: 0;
+    padding: $spacing-m;
 }
 
 #featured .slick-dots li {
