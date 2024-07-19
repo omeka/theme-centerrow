@@ -372,7 +372,7 @@ header nav a {
     width: 1.5 * $base-line-height;
     height: 1.75 * $base-line-height;
     border-bottom: 0;
-    color: darken($gray, 15%);
+    color: $dark-gray;
 }
 
 #search-form.closed + .search-toggle {
