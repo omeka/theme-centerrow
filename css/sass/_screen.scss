@@ -16,7 +16,7 @@ a {
     }
 
     &:focus {
-        border: solid 1px $red;
+        outline: 1px solid $red;
     }
 }
 

@@ -425,7 +425,7 @@ textarea {
             text-decoration: double underline;
   }
   a:focus {
-    border: solid 1px #C72E2E;
+    outline: 1px solid #C72E2E;
   }
 
   h1, h2, h3, h4, h5, h6 {
