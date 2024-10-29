@@ -5,7 +5,7 @@
         if (metadata('item', 'has files')) {
             $itemImageFile = $item->getFile(0);
             $itemImageTitle = metadata($itemImageFile, 'rich_title', array('no_escape' => true));
-            $linkContent .= item_image(null, array('alt' => '', 'title' => $itemImageTitle));
+            $linkContent .= item_image();
         }
         $linkContent .= metadata($item, 'rich_title', array('no_escape' => true));
         ?>

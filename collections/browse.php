@@ -26,7 +26,7 @@ echo head(array('title'=>$pageTitle,'bodyclass' => 'collections browse'));
         if ($collectionImage = record_image('collection')) {
             $collectionImageFile = $collection->getFile();
             $collectionImageTitle = metadata($collectionImageFile, 'rich_title', array('no_escape' => true));
-            $linkContent .= record_image('collection', null, array('alt' => '', 'title' => $collectionImageTitle));
+            $linkContent .= record_image('collection');
         }
         $linkContent .= metadata($collection, 'rich_title', array('no_escape' => true));
         ?>

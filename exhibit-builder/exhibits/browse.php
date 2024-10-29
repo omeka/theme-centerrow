@@ -32,7 +32,7 @@ echo head(array('title' => $title, 'bodyclass' => 'exhibits browse'));
             if ($exhibitImage = record_image($exhibit)) {
                 $exhibitImageFile = $exhibit->getFile();
                 $exhibitImageTitle = metadata($exhibitImageFile, 'rich_title', array('no_escape' => true));
-                $linkContent .= record_image($exhibit, null, array('alt' => '', 'title' => $exhibitImageTitle));
+                $linkContent .= record_image($exhibit);
             }
             $linkContent .= metadata($exhibit, 'title', array('no_escape' => true));
             ?>
