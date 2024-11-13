@@ -46,10 +46,14 @@ if (!CenterRow) {
     $(document).ready(function() {
         $('#advanced-form').parents('#search-container').addClass('with-advanced');
 
-        $('.search-toggle').click(function() {
+        $('#search-container').on('click', '.search-toggle', function() {
+            var searchToggle = $(this);
             $('#search-form').toggleClass('closed').toggleClass('open');
             if ($('#search-form').hasClass('open')) {
+                searchToggle.attr('aria-expanded', 'true');
                 $('#query').focus();
+            } else {
+                searchToggle.attr('aria-expanded', 'false');
             }
         });
     });

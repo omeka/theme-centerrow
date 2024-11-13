@@ -58,7 +58,7 @@
                 <?php else: ?>
                 <?php echo search_form(array('form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
                 <?php endif; ?>
-                <button type="button" class="search-toggle" title="<?php echo __('Toggle search'); ?>"></button>
+                <button type="button" class="search-toggle" aria-expanded="false" aria-controls="advanced-form" title="<?php echo __('Toggle search'); ?>"></button>
             </div>
 
 
