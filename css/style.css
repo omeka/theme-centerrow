@@ -734,6 +734,9 @@ nav ul {
     right: 24px;
     z-index: 100;
   }
+  #search-container #search-form + .search-toggle {
+    position: static;
+  }
 
   #search-container input[type=text],
 #search-container button {
@@ -750,8 +753,7 @@ nav ul {
   }
 
   #search-form.closed {
-    width: 36px;
-    height: 42px;
+    display: none;
   }
 
   #search-form.open {
@@ -772,13 +774,14 @@ nav ul {
     border-bottom: 0;
     color: #676767;
     border: 1px solid #dedede;
+    background-color: transparent;
   }
 
   #search-form.closed + .search-toggle {
     right: 0;
     border-top: 0;
   }
-  #search-form.closed + .search-toggle:after {
+  #search-form.closed + .search-toggle .search-icon:after {
     content: "\f002";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -788,7 +791,7 @@ nav ul {
     top: 0;
     right: 0;
   }
-  #search-form.open + .search-toggle:after {
+  #search-form.open + .search-toggle .search-icon:after {
     content: "\f00d";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
@@ -806,17 +809,18 @@ nav ul {
     text-indent: -9999px;
     position: relative;
   }
-  #search-form button:after {
+  #search-form button + .search-icon:after {
     content: "\f002";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     position: absolute;
-    top: 6px;
-    right: 0;
+    top: 12px;
+    right: 12px;
     text-indent: 0;
     width: 36px;
     text-align: center;
     cursor: pointer;
+    color: #676767;
   }
 
   #query:focus {

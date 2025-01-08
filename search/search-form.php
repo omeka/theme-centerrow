@@ -25,4 +25,5 @@
         <?php endforeach; ?>
     <?php endif; ?>
     <?php echo $this->formButton('submit_search', $options['submit_value'], array('type' => 'submit')); ?>
+    <span class="search-icon" role="presentation"></span>
 </form>
