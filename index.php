@@ -1,5 +1,5 @@
 <?php
-$featuredHtml = centerrow_featured_html();
+//$featuredHtml = centerrow_featured_html();
 $autoplay = (get_theme_option('home_slider_autoplay') !== null) ? get_theme_option('home_slider_autoplay') : '1';
 $autoplaySpeed = (get_theme_option('home_slider_autoplay_speed') !== null) ? (int) get_theme_option('home_slider_autoplay_speed') : 5000;
 $autoplayOptions = ($autoplay == '1') ? 'autoplay: true, autoplaySpeed: ' . $autoplaySpeed . ',' : 'autoplay: false,';
@@ -26,7 +26,11 @@ queue_js_string('
 <?php if (centerrow_check_for_featured_records()): ?>
 <div id="featured">
     <div id="featured-slides">
-        <?php echo centerrow_featured_html(); ?>
+        <?php 
+        $recordTypes = ['item', 'collection', 'exhibit'];
+        $overrides = array_fill_keys($recordTypes, 'common/featured.php');
+        echo random_featured_records($recordTypes, 0, $overrides); 
+        ?>
     </div>
 </div>
 <?php endif; ?>
