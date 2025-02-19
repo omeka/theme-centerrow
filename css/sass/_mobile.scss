@@ -39,7 +39,7 @@ footer {
     width: 100%;
     text-align: center;
     padding-top: (.25 * $base-line-height);
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid var(--centerrow-gray);
     padding-bottom: ((.25 * $base-line-height) - 1px);
 }
 
@@ -125,7 +125,7 @@ header nav .navigation {
 .browse .hentry,
 #collection-items .hentry {
     width: 100%;
-    border: 1px solid $gray;
+    border: 1px solid var(--centerrow-gray);
     padding: ((.5 * $base-line-height) - 1px);
     margin-bottom: $base-line-height;
 }

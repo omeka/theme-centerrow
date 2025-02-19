@@ -11,6 +11,8 @@ $spacing-l: $base-line-height;
 
 //Colors
 
-$red: #C72E2E;
-$gray: #dedede;
-$dark-gray: #676767;
+:root {
+    --centerrow-red: #C72E2E;
+    --centerrow-gray: #dedede;
+    --centerrow-dark-gray: #676767;
+}

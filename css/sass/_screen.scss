@@ -8,7 +8,7 @@ html {
 }
 
 a {
-    color: $red;
+    color: var(--centerrow-red);
     text-decoration: underline;
 
     &:hover {
@@ -16,7 +16,7 @@ a {
     }
 
     &:focus {
-        outline: 1px solid $red;
+        outline: 1px solid var(--centerrow-red);
     }
 }
 
@@ -70,8 +70,8 @@ img {image-orientation:from-image;}
 table {
     margin: (2 * $base-line-height) auto;
     border-collapse: collapse;
-    border-top: 1px solid $gray;
-    border-bottom: 1px solid $gray;
+    border-top: 1px solid var(--centerrow-gray);
+    border-bottom: 1px solid var(--centerrow-gray);
 }
 
 th, td {
@@ -80,13 +80,13 @@ th, td {
 }
 
 th {
-    border-bottom: 3px solid $gray;
+    border-bottom: 3px solid var(--centerrow-gray);
     padding-bottom: ((.5 * $base-line-height) - 3px);
     text-align: left;
 }
 
 td {
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid var(--centerrow-gray);
     padding-bottom: ((.5 * $base-line-height) - 1px);
 }
 
@@ -149,8 +149,8 @@ button,
 html [type="button"],
 .button,
 input[type="submit"] {
-    background-color: $gray;
-    color: $dark-gray;
+    background-color: var(--centerrow-gray);
+    color: var(--centerrow-dark-gray);
     border: 0;
     cursor: pointer;
     padding: $spacing-s;
@@ -200,7 +200,7 @@ input[type="submit"] {
 }
 
 .search-entry {
-    border: 1px solid $gray;
+    border: 1px solid var(--centerrow-gray);
     padding: (.5 * $base-line-height);
 }
 
@@ -235,7 +235,7 @@ nav ul {
 }
 
 .item-pagination.navigation {
-    border-top: 1px solid $gray;
+    border-top: 1px solid var(--centerrow-gray);
     padding-top: ((.5 * $base-line-height) - 1px);
     display: flex;
     justify-content: space-between;
@@ -247,7 +247,7 @@ nav ul {
 
 .secondary-nav ul {
     margin: 0 0 -1px;
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid var(--centerrow-gray);
     padding-bottom: ((.5 * $base-line-height) - 1px);
 }
 
@@ -257,7 +257,7 @@ nav ul {
     padding-bottom: (.5 * $base-line-height);
 
     &.active a {
-        color: $red;
+        color: var(--centerrow-red);
     }
 }
 
@@ -289,7 +289,7 @@ header nav .navigation {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 1px solid $gray;
+    border: 1px solid var(--centerrow-gray);
     border-width: 1px 0;
     margin: $base-line-height 0;
 }
@@ -346,7 +346,7 @@ header nav a {
 #search-container input[type="text"],
 #search-container button {
     border: 0;
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid var(--centerrow-gray);
     background-color: #fff;
     height: 1.5 * $base-line-height;
     display: inline-block;
@@ -377,8 +377,8 @@ header nav a {
     width: 1.5 * $base-line-height;
     height: 1.75 * $base-line-height;
     border-bottom: 0;
-    color: $dark-gray;
-    border: 1px solid $gray;
+    color: var(--centerrow-dark-gray);
+    border: 1px solid var(--centerrow-gray);
     background-color: transparent;
 }
 
@@ -443,7 +443,7 @@ header nav a {
     padding: (.5 * $base-line-height);
     right: 0;
     left: 0;
-    border: 1px solid $gray;
+    border: 1px solid var(--centerrow-gray);
     border-top: 0;
 }
 
@@ -490,7 +490,7 @@ header nav ul {
 /* focus/open states of first descendant link within a top level 
     navigation item */
 .open {
-    border-bottom: 3px solid $gray;
+    border-bottom: 3px solid var(--centerrow-gray);
 }
 
 .nav-item.open > a {
@@ -669,7 +669,7 @@ footer {
     }
 
     .sorting a {
-        color: $red;
+        color: var(--centerrow-red);
     }
 }
 
@@ -685,7 +685,7 @@ footer {
 .pagination-nav .button {
     display: inline-block;
     background-color: #fff;
-    border: 1px solid $gray;
+    border: 1px solid var(--centerrow-gray);
     height: 1.55 * $base-line-height;
     line-height: 1.5 * $base-line-height;
     padding: 0 (.5 * $base-line-height);
@@ -820,9 +820,9 @@ footer {
 
     li {
         display: inline-block;
-        border-color: $gray;
+        border-color: var(--centerrow-gray);
         font-size: 1.25 * $base-font-size;
-        border: 1px solid $gray;
+        border: 1px solid var(--centerrow-gray);
         padding: ((.25 * $base-font-size) - 1px);
         margin: 0 .5em;
     }
@@ -852,7 +852,7 @@ footer {
 	
 	li {
 		padding: (.25 * $base-line-height) (.5 * $base-line-height);
-		border: 1px solid $gray;
+		border: 1px solid var(--centerrow-gray);
 		margin: 0 (.5 * $base-line-height) (.5 * $base-line-height) 0;
 	}
 	
@@ -919,7 +919,7 @@ footer {
 }
 
 .element-set h2 {
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid var(--centerrow-gray);
     padding-bottom: ((.25 * $base-line-height) - 1px);
 }
 
@@ -955,8 +955,8 @@ footer {
     width: 100%;
     text-align: center;
     font-size: 1.125 * $base-font-size;
-    border-top: 1px solid $gray;
-    border-bottom: 1px solid $gray;
+    border-top: 1px solid var(--centerrow-gray);
+    border-bottom: 1px solid var(--centerrow-gray);
     padding: ((.5 * $base-line-height) - 1px) 0;
 }
 
@@ -967,6 +967,13 @@ footer {
 #home #featured-slides {
     margin: 0 0 (2 * $base-line-height);
     position: relative;
+}
+
+#featured-slides button:-moz-focusring,
+#featured-slides [type=button]:-moz-focusring,
+#featured-slides [type=reset]:-moz-focusring,
+#featured-slides [type=submit]:-moz-focusring {
+  outline: 1px solid var(--centerrow-red);
 }
 
 #featured .record {
@@ -1031,7 +1038,7 @@ footer {
     bottom: 0;
 
     &:focus {
-        color: $red;
+        color: var(--centerrow-red);
         outline: solid;
     }
 }
@@ -1059,7 +1066,7 @@ footer {
 }
 
 #featured .slick-dots button {
-    background-color: $gray;
+    background-color: var(--centerrow-gray);
     width: 16px;
     height: 16px;
     border-radius: 24px;
@@ -1072,15 +1079,15 @@ footer {
 }
 
 #featured .slick-dots .slick-active button {
-    background-color: darken($gray, 30%);
+    background-color: var(--centerrow-dark-gray);
 }
 
 #featured .slick-autoplay-toggle-button {
-    color: darken($gray, 30%);
+    color: var(--centerrow-dark-gray);
 }
 
 #featured .slick-dots li[aria-hidden="false"] button {
-    background-color: darken($gray, 25%);
+    background-color: var(--centerrow-dark-gray);
 }
 /* @end */
 
@@ -1113,7 +1120,7 @@ footer {
 }
 
 #exhibit-page-navigation {
-    border-top: 1px solid $gray;
+    border-top: 1px solid var(--centerrow-gray);
     padding-top: ((.5 * $base-line-height) - 1px);
     margin-top: (2 * $base-line-height);
 }
@@ -1143,17 +1150,17 @@ footer {
 }
 
 #exhibit-pages .current a {
-    color: $red;
+    color: var(--centerrow-red);
 }
 
 #exhibit-pages > ul > li:not(:last-of-type) {
     padding-bottom: ((.25 * $base-line-height) - 1px);
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid var(--centerrow-gray);
     margin-bottom: (.25 * $base-line-height);
 }
 
 #exhibit-pages h4 {
-    border-bottom: 3px solid $gray;
+    border-bottom: 3px solid var(--centerrow-gray);
     padding-bottom: ((.25 * $base-line-height) - 3px);
     margin: 0 0 (.25 * $base-line-height);
 }
