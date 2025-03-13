@@ -28,8 +28,9 @@ queue_js_string('
     <div id="featured-slides">
         <?php 
         $recordTypes = ['item', 'collection', 'exhibit'];
-        $overrides = array_fill_keys($recordTypes, 'common/featured.php');
-        echo random_featured_records($recordTypes, 0, $overrides); 
+        foreach ($recordTypes as $recordType) {
+          echo display_records($recordType, array(), 'common/featured.php'); 
+        }
         ?>
     </div>
 </div>
