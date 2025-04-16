@@ -1,12 +1,9 @@
 <?php
 function centerrow_featured_html() {
     $featuredHtml = '';
-    $featuredRecordTypes = ['Collection', 'Item'];
-    if (plugin_is_active('ExhibitBuilder')) {
-        array_unshift($recordTypes('Exhibit'));
-    }
-    foreach ($recordTypes as $recordType) {
-        if (get_theme_option('display_featured_' . strtolower($recordType)) == '1') {
+    $featuredRecordTypes = ['Exhibit', 'Collection', 'Item'];
+    foreach ($featuredRecordTypes as $featuredRecordType) {
+        if (get_theme_option('display_featured_' . strtolower($featuredRecordType)) == '1') {
            $featuredHtml .= display_records($featuredRecordType, 5, 'common/featured.php', ['recordType' => $featuredRecordType]);
         }
     }
