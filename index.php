@@ -1,5 +1,9 @@
 <?php
-$featuredHtml = center_row_featured_html();
+$featuredRecordTypes = centerrow_configured_featured_record_types();
+$featuredHtml = '';
+foreach ($featuredRecordTypes as $featuredRecordType) {
+  $featuredHtml .= display_records($featuredRecordType, 5, [], 'common/featured.php', ['recordType' => $featuredRecordType]);
+}
 $autoplay = (get_theme_option('home_slider_autoplay') !== null) ? get_theme_option('home_slider_autoplay') : '1';
 $autoplaySpeed = (get_theme_option('home_slider_autoplay_speed') !== null) ? (int) get_theme_option('home_slider_autoplay_speed') : 5000;
 $autoplayOptions = ($autoplay == '1') ? 'autoplay: true, autoplaySpeed: ' . $autoplaySpeed . ',' : 'autoplay: false,';

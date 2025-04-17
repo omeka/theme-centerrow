@@ -1,16 +1,18 @@
 <?php
-function centerrow_featured_html() {
-    $featuredHtml = '';
-    $featuredRecordTypes = ['Collection', 'Item'];
-    if (plugin_is_active('ExhibitBuilder')) {
-        array_unshift($recordTypes('Exhibit'));
-    }
-    foreach ($recordTypes as $recordType) {
-        if (get_theme_option('display_featured_' . strtolower($recordType)) == '1') {
-           $featuredHtml .= display_records($featuredRecordType, 5, 'common/featured.php', ['recordType' => $featuredRecordType]);
+function centerrow_configured_featured_record_types() {
+    $recordTypeOptions = ['Exhibit', 'Collection', 'Item'];
+    $configuredRecordTypes = [];
+
+    foreach ($recordTypeOptions as $recordTypeOption) {
+        if (get_theme_option('display_featured_' . strtolower($recordTypeOption)) == '1') {
+            if ($recordTypeOption == 'Exhibit' && !plugin_is_active('ExhibitBuilder')) {
+                continue;
+            }
+            $configuredRecordTypes[] = $recordTypeOption;
         }
     }
-    return $featuredHtml;
+
+    return $configuredRecordTypes;
 }
 
 function centerrow_get_square_thumbnail_url($file, $view) {
