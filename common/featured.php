@@ -10,7 +10,7 @@ if ($backgroundFile) {
 <div class="<?php echo $recordType; ?> record" style="<?php echo $background; ?>">
     <div class="featured-meta">
         <span class="sr-only"><?php echo __('Featured'); ?></span>
-        <?php if ($recordType == 'exhibit'): ?>
+        <?php if ($recordType == 'Exhibit'): ?>
             <?php set_current_record('exhibit', $record); ?>
             <span id="slick-slide0<?php echo $slideCount; ?>" class="resource-title"><?php echo link_to_exhibit(); ?></span>
         <?php else: ?>
