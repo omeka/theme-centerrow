@@ -23,15 +23,10 @@ queue_js_string('
 
 <!-- Featured Item -->
 
-<?php if (centerrow_check_for_featured_records()): ?>
+<?php if ($featuredHtml !== ''): ?>
 <div id="featured">
     <div id="featured-slides">
-        <?php 
-        $recordTypes = ['item', 'collection', 'exhibit'];
-        foreach ($recordTypes as $recordType) {
-          echo display_records($recordType, array(), 'common/featured.php'); 
-        }
-        ?>
+        <?php echo $featuredHtml; ?>
     </div>
 </div>
 <?php endif; ?>
