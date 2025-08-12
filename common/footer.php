@@ -1,4 +1,4 @@
-</article><!-- end content -->
+</main><!-- end content -->
 
 <footer role="contentinfo">
 
