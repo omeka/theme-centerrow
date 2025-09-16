@@ -1026,7 +1026,7 @@ nav ul {
     display: inline-block;
   }
   .open.sub-nav ul li a:not(.parent):before {
-    content: "◆";
+    content: "◆"/"";
     display: inline-block;
     width: 24px;
     margin-right: -3px;

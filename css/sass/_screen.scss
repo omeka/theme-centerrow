@@ -603,7 +603,7 @@ a.parent:after {
     }
 
     li a:not(.parent):before {
-        content: "\25C6";
+        content: "\25C6" / "";
         display: inline-block;
         width: $base-line-height;
         margin-right: (-.125 * $base-line-height);
