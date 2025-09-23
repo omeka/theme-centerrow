@@ -579,12 +579,18 @@ input[type=submit] {
     width: 25%;
     padding-right: 24px;
     text-align: right;
+    margin-right: 0;
+  }
+
+  .field .required-label {
+    margin-left: auto;
   }
 
   .field .inputs,
 .field .five.columns {
     width: 75%;
     padding-left: 24px;
+    margin-left: 0;
   }
 
   .field .inputs ~ *,

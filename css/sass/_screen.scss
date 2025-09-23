@@ -172,12 +172,18 @@ input[type="submit"] {
     width: 25%;
     padding-right: $base-line-height;
     text-align: right;
+    margin-right: 0;
+}
+
+.field .required-label {
+    margin-left: auto;
 }
 
 .field .inputs,
 .field .five.columns {
     width: 75%;
     padding-left: $base-line-height;
+    margin-left: 0;
 }
 
 .field .inputs ~ *,
