@@ -1182,3 +1182,21 @@ footer {
 }
 
 /* @end */
+
+/* @group ----- Other Plugins ----- */
+
+.guest-user .field label {
+    display: block;
+}
+
+@media screen and (max-width: 767px) {
+    .guest-user .field label {
+        display: flex;
+    }
+
+    .guest-user .field .required-label {
+        margin-left: 0;
+    }
+}
+
+/* @end */

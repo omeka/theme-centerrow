@@ -984,6 +984,9 @@ nav ul {
   /* @group ----- Exhibits ----- */
 
   /* @end */
+  /* @group ----- Other Plugins ----- */
+
+  /* @end */
 }
 @media screen and (min-width: 1100px) {
   .sub-nav.first {
@@ -1636,6 +1639,20 @@ nav ul {
 @media screen {
   .exhibit-block > *:last-child {
     margin-bottom: 0;
+  }
+}
+@media screen {
+  .guest-user .field label {
+    display: block;
+  }
+}
+@media screen and (max-width: 767px) {
+  .guest-user .field label {
+    display: flex;
+  }
+
+  .guest-user .field .required-label {
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 640px) {
