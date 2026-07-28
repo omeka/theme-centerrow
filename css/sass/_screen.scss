@@ -1,3 +1,24 @@
+@mixin font-face(
+    $filename,
+    $family,
+    $style: normal,
+    $weight: 400
+) {
+    @font-face {
+        font-family: $family;
+        font-style: $style;
+        font-weight: $weight;
+        font-display: swap;
+        src: url("../fonts/#{$filename}.woff2") format("woff2"), url("../fonts/#{$filename}.woff") format("woff");
+    }
+}
+
+
+@include font-face('CrimsonText-Regular', 'Crimson Text');
+@include font-face('CrimsonText-Italic', 'Crimson Text', $style: italic);
+@include font-face('CrimsonText-Bold', 'Crimson Text', $weight: 700);
+@include font-face('CrimsonText-BoldItalic', 'Crimson Text', $weight: 700, $style: italic);
+
 * {
     box-sizing: border-box;
 }
