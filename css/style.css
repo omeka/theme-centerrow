@@ -800,7 +800,7 @@ nav ul {
     border-top: 0;
   }
   #search-form.closed + .search-toggle .search-icon:after {
-    content: "\f002";
+    content: "\f002"/"";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
   }
@@ -810,7 +810,7 @@ nav ul {
     right: 0;
   }
   #search-form.open + .search-toggle .search-icon:after {
-    content: "\f00d";
+    content: "\f00d"/"";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
   }
@@ -828,7 +828,7 @@ nav ul {
     position: relative;
   }
   #search-form button + .search-icon:after {
-    content: "\f002";
+    content: "\f002"/"";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     position: absolute;
@@ -923,7 +923,7 @@ nav ul {
   }
 
   .nav-menu > .nav-item > [role=button]:after {
-    content: "  \f0da";
+    content: "  \f0da"/"";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     display: inline-block;
@@ -931,7 +931,7 @@ nav ul {
   }
 
   .nav-menu > .nav-item > [aria-expanded=true]:after {
-    content: "  \f0d7";
+    content: "  \f0d7"/"";
   }
 
   a.parent {
@@ -939,7 +939,7 @@ nav ul {
   }
 
   a.parent:after {
-    content: ":";
+    content: ":"/"";
   }
 
   /* sub-navigation panel */
@@ -1150,14 +1150,14 @@ nav ul {
 @media screen {
   .o-icon-previous:before {
     font-family: "Font Awesome 5 Free";
-    content: "\f104";
+    content: "\f104"/"";
     font-weight: 900;
   }
 }
 @media screen {
   .o-icon-next:before {
     font-family: "Font Awesome 5 Free";
-    content: "\f105";
+    content: "\f105"/"";
     font-weight: 900;
   }
 }
@@ -1178,7 +1178,7 @@ nav ul {
 @media screen {
   .desc .sort-icon:before,
 .asc .sort-icon:after {
-    content: "\f0dd";
+    content: "\f0dd"/"";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
   }
@@ -1186,7 +1186,7 @@ nav ul {
 @media screen {
   .asc .sort-icon:before,
 .desc .sort-icon:after {
-    content: "\f0de";
+    content: "\f0de"/"";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
   }
