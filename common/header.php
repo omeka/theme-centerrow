@@ -45,7 +45,7 @@
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <div id="wrap">
 
-        <header role="banner">
+        <header>
 
             <?php fire_plugin_hook('public_header', array('view'=>$this)); ?>
 
@@ -61,7 +61,7 @@
             </div>
 
 
-            <nav id="top-nav" role="navigation">
+            <nav id="top-nav" aria-label="<?php echo __('Main'); ?>">
                 <?php echo centerrow_public_nav_main(); ?>
             </nav>
 
