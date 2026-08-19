@@ -459,7 +459,7 @@ textarea {
             text-decoration: double underline;
   }
   a:focus {
-    outline: 1px solid var(--centerrow-red);
+    outline: 2px solid var(--centerrow-red);
   }
 
   h1, h2, h3, h4, h5, h6 {
