@@ -21,6 +21,8 @@ queue_js_string('
 ?>
 <?php echo head(array('bodyid'=>'home')); ?>
 
+<h1 class="sr-only"><?php echo __('Home'); ?></h1>
+
 <!-- Featured Item -->
 
 <?php if ($featuredHtml !== ''): ?>
