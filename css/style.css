@@ -1699,10 +1699,6 @@ button#search-toggle {
   }
 }
 @media screen and (max-width: 640px) {
-  #site-title {
-    text-align: center;
-  }
-
   .featured-meta h3 + p {
     display: none;
   }
@@ -1749,12 +1745,13 @@ footer {
   header {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
   }
 
   #site-title {
-    margin: 6px 0;
-    order: 2;
+    margin: 24px 48px 12px;
     width: 100%;
+    text-align: center;
   }
 
   #site-title img {
@@ -1762,30 +1759,9 @@ footer {
     max-width: calc(100% - 42px);
   }
 
-  #search-container {
-    width: 100%;
-    position: static;
-    display: flow-root;
-  }
-
-  #search-form {
-    display: none;
-  }
-  #search-form.open {
-    right: 59px;
-  }
-
-  #search-form + button.search-toggle {
-    position: static;
-    float: right;
-  }
-
-  #top-nav {
-    order: 3;
-  }
-
-  #header-image {
-    order: 4;
+  button#search-toggle,
+#search-container {
+    top: 0;
   }
 
   #top-nav ul {
