@@ -374,19 +374,20 @@ header nav a {
     width: 100%;
 }
 
+button#search-toggle[aria-expanded="false"] + #search-container {
+    display: none;
+}
+
 #search-container {
     position: absolute;
     top: (-2 * $base-line-height);
-    right: $base-line-height;
+    right: 0;
     z-index: 100;
-
-    #search-form + .search-toggle {
-        position: static;
-    }
 }
 
 #search-container input[type="text"],
-#search-container button {
+#search-container button,
+button#search-toggle {
     border: 0;
     border-bottom: 1px solid var(--centerrow-gray);
     background-color: #fff;
@@ -399,11 +400,11 @@ header nav a {
     color: #676767;
 }
 
-#search-form.closed {
+[aria-expanded="false"] + #search-container {
     display: none;
 }
 
-#search-form.open {
+[aria-expanded="true"] + #search-container #search-form {
     display: flex;
     padding: (.25 * $base-line-height) (.5 * $base-line-height) (.5 * $base-line-height);
     box-shadow: 0 0 0 1px #dedede inset;
@@ -413,18 +414,15 @@ header nav a {
     margin-right: -1px;
 }
 
-#search-form + button.search-toggle {
-    bottom: 0;
+button#search-toggle {
+    top: -48px;
     position: absolute;
     width: 1.5 * $base-line-height;
-    height: 1.75 * $base-line-height;
+    height: 2.25 * $base-line-height;
     border-bottom: 0;
     color: var(--centerrow-dark-gray);
     border: 1px solid var(--centerrow-gray);
     background-color: transparent;
-}
-
-#search-form.closed + .search-toggle {
     right: 0;
     border-top: 0;
 
@@ -435,38 +433,41 @@ header nav a {
     }
 }
 
-#search-form.open + .search-toggle {
+#search-toggle[aria-expanded="true"] {
+    display: none;
+}
+
+#search-container button#close-search {
     top: 0;
     right: 0;
+    position: absolute;
+    height: 2.25 * $base-line-height;
+    background-color: transparent;
+    box-shadow: 0 0 0 1px var(--centerrow-gray) inset;
+    border: 0;
 
-    .search-icon:after {
+    .close-icon:after {
         content: "\f00d" / "";
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
     }
 }
 
-#search-form.closed [type="text"],
-#search-form.closed [type="submit"],
-#search-form.closed #advanced-form {
-    display: none;
-}
-
 #search-form button {
     width: 1.5 * $base-line-height;
     overflow: hidden;
-    text-indent: -9999px;
     position: relative;
 
-    & + .search-icon:after {
+    .search-icon:after {
         content: "\f002" / "";
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         position: absolute;
-        top: (.5 * $base-line-height);
-        right: .5 * $base-line-height;
+        top: 0;
+        right: 0;
         text-indent: 0;
         width: 1.5 * $base-line-height;
+        line-height: 1.5 * $base-line-height;
         text-align: center;
         cursor: pointer;
         color: #676767;

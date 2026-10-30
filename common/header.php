@@ -51,13 +51,14 @@
 
             <div id="site-title"><?php echo link_to_home_page(theme_logo()); ?></div>
 
-            <div id="search-container" role="search">
+            <button type="button" id="search-toggle" aria-expanded="false" aria-controls="advanced-form" title="<?php echo __('Toggle search'); ?>"><span class="search-icon" role="presentation"></span></button>
+            <div id="search-container" role="dialog" aria-label="<?php echo __('Search'); ?>">
                 <?php if (get_theme_option('use_advanced_search') === null || get_theme_option('use_advanced_search')): ?>
                 <?php echo search_form(array('show_advanced' => true, 'form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
                 <?php else: ?>
                 <?php echo search_form(array('form_attributes' => array('role' => 'search', 'class' => 'closed'))); ?>
                 <?php endif; ?>
-                <button type="button" class="search-toggle" aria-expanded="false" aria-controls="advanced-form" title="<?php echo __('Toggle search'); ?>"><span class="search-icon" role="presentation"></span></button>
+                <button type="button" id="close-search" aria-label="<?php echo __('Close'); ?>"><span class="close-icon" role="presentation"></span></button>
             </div>
 
 

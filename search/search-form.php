@@ -24,6 +24,5 @@
         <?php echo $this->formHidden('record_types[]', $type); ?>
         <?php endforeach; ?>
     <?php endif; ?>
-    <?php echo $this->formButton('submit_search', $options['submit_value'], array('type' => 'submit')); ?>
-    <span class="search-icon" role="presentation"></span>
+    <button type="submit" value="<?php echo $options['submit_value']; ?>" name="submit_search" id="submit_search" aria-label="<?php echo __('Search'); ?>"><span class="search-icon" role="presentation"></span></button>
 </form>
